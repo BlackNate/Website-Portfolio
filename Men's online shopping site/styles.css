@@ -54,19 +54,21 @@ h3 {
 footer {
     background-color: #2b2d42;
     color: #edf6f9; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 footer p {
     margin: 0;
     padding: 10px;
-    text-align: center;
 }
 
 .intro-header {
     display: flex;
     justify-content: left;
     align-items: center;
-    background-image: url("/Images/main\ photo.jpg");
+    background-image: url("./Images/main\ photo.jpg");
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -84,6 +86,11 @@ footer p {
     font-size: 8vw;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+}
+
+.overlay p {
+    font-size: 2vw;
+    margin: 10px 0;
 }
 
 .shop-button {
@@ -237,10 +244,10 @@ footer p {
 
 .footer-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    /*margin-right: 200px;*/
+    width: 100%;
 }
 
 .footer-links ul {
@@ -249,8 +256,9 @@ footer p {
 }
 
 .footer-links ul p {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bolder;
+    text-align: center;
 }
 
 .footer-links ul li {
