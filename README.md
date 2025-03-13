@@ -3,6 +3,7 @@ Initially I start each project using HTML and CSS. Then I further develop it mak
 
 # Men Online Shopping Site
 https://blacknate.github.io/Website-Portfolio/fashion4men/
+
 Here i created a site for online shopping for men.
 further development of the site include:
 -Making it more responsive to any device size.
@@ -11,7 +12,8 @@ further development of the site include:
 -add a cart feature that tracks items added on the cart and calculates its total price.
 
 # Website about lion awareness
-![url](https://blacknate.github.io/Website-Portfolio/lions-den/)
+https://blacknate.github.io/Website-Portfolio/lions-den/
+
 Here i created a website that tries to rise awareness about lions and the importance in the ecosystem.
 further development of the site include:
 -Making it more responsive to any device size.
@@ -19,5 +21,5 @@ further development of the site include:
 -make a database to store email addresses 
 
 # Devchallenges projects:
-1. ![url](https://blacknate.github.io/Website-Portfolio/Simple-Feature-Section/)
-2. ![url](https://blacknate.github.io/Website-Portfolio/Newsletter-site/)
+1. https://blacknate.github.io/Website-Portfolio/Simple-Feature-Section
+2. https://blacknate.github.io/Website-Portfolio/Newsletter-site
