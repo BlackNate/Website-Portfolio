@@ -15,7 +15,7 @@ header {
     justify-content: space-between; 
     align-items: center;
     background-color: #588157;
-    padding: 30px 50px;
+    padding: 30px 20px;
     color: #dad7cd
 }
 
@@ -23,7 +23,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 nav ul li a {
@@ -35,6 +35,7 @@ nav ul li a:hover {
     background-color: #344e41;
     padding: 5px 30px;
 }
+
 
 .slogan {
     font-weight: bolder;
@@ -57,12 +58,14 @@ nav ul li a:hover {
     font-size: 5vw;
     margin-top: 100px;
     margin-left: 50px;
+    text-shadow: 3px 2px 1.5px #dad7cd;
+    letter-spacing: 5px;
 }
 
 .blog-posts {
     background-color: #dad7cd;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 20px;
 } 
 
@@ -76,6 +79,10 @@ figure {
 
 .gallery {
     display: flex;
+}
+
+.gallery img {
+    width: 250px;
 }
 
 .awareness {
