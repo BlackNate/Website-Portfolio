@@ -1,0 +1,79 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background-color: #F9FAFB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+    width: 700px;
+    margin: 80px 0 60px 0;
+}
+
+h1 {
+    margin: 10px 0px;
+    font-weight: 600;
+    font-size: 48px;
+    color: #000000
+}
+
+h5 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    color: #6C727F;
+}
+
+
+#user-emails {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#email {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    width: 500px;
+    padding: 18px;
+    border-radius: 15px;
+    background-color: #F9FAFB;
+    border: 2px solid #E5E7EB;
+    margin-bottom: 2px; 
+    color: #000000;
+}
+
+#btn {
+    font-weight: 600;
+    font-size: 16px;
+    width: 540px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #284BCE;
+    color: #ffffff;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#btn:hover {
+    background-color: #6C727F;
+    font-size: 20px; 
+}
+
+#user-emails p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #394150;
+}
