@@ -2,7 +2,7 @@ The Website-Portolio host different website project I have created.
 Initially I start each project using HTML and CSS. Then I further develop it making it more responsive and clean up some code lines
 
 # Men Online Shopping Site
-![url](https://blacknate.github.io/Website-Portfolio/fashion4men/)
+https://blacknate.github.io/Website-Portfolio/fashion4men/
 Here i created a site for online shopping for men.
 further development of the site include:
 -Making it more responsive to any device size.
