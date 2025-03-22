@@ -21,12 +21,12 @@ further development of the site include:
 -make a database to store email addresses 
 
 # Tea cozy Website utilizing flexbox for layout.
-![url](https://blacknate.github.io/Website-Portfolio/tea-cozy/)
+https://blacknate.github.io/Website-Portfolio/tea-cozy/
 The Tea Cozy website project showcases the implementation of HTML and CSS to build a functional and visually appealing online presence for a tea shop.  
 Flexbox is used extensively to manage the layout of different sections, ensuring flexibility and responsiveness.
 
 # Devchallenges projects:
 List of Devchallengies i have completed so far.
 
-1. ![url](https://blacknate.github.io/Website-Portfolio/Simple-Feature-Section/)
-2. ![url](https://blacknate.github.io/Website-Portfolio/Newsletter-site/)
+1. https://blacknate.github.io/Website-Portfolio/Simple-Feature-Section/
+2. https://blacknate.github.io/Website-Portfolio/Newsletter-site/
