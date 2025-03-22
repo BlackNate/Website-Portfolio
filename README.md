@@ -32,3 +32,5 @@ List of Devchallengies I have completed so far.
 2. Newsletter-site Project-- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/Newsletter-site/
 3. Contact Page Project -- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/contact-page/
 4. FAQ-webpage -- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/FAQ-webpage/
+5. Simple Article Listing -- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/article-listing/
+ 
