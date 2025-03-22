@@ -28,7 +28,7 @@ Flexbox is used extensively to manage the layout of different sections, ensuring
 # Devchallenges projects:
 List of Devchallengies I have completed so far.
 
-1. Feature-Section Project -- https://blacknate.github.io/Website-Portfolio/Simple-Feature-Section/
-2. Newsletter-site Project-- https://blacknate.github.io/Website-Portfolio/Newsletter-site/
-3. Contact Page Project -- https://blacknate.github.io/Website-Portfolio/contact-page/
-4. FAQ-webpage -- https://blacknate.github.io/Website-Portfolio/FAQ-webpage/
+1. Feature-Section Project -- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/Simple-Feature-Section/
+2. Newsletter-site Project-- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/Newsletter-site/
+3. Contact Page Project -- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/contact-page/
+4. FAQ-webpage -- https://blacknate.github.io/Website-Portfolio/DevChallenges-Projects/FAQ-webpage/
