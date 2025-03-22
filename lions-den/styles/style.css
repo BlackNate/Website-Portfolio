@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     font-family: "Inria Sans", sans-serif;
     color: rgb(34, 34, 33);
+    height: auto;
 }
 
 p {
@@ -36,24 +37,30 @@ nav ul li a:hover {
     padding: 5px 30px;
 }
 
+footer {
+    background-color: #588157;
+    color: #dad7cd
+}
+
 
 .slogan {
     font-weight: bolder;
     font-size: 30px;
 }
 
-.intro-text {
+.banner {
     background-image: url("../Images/main-photo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: start;
-    max-height: 90vh;
+    justify-content: left;
 }
 
-.intro-text h1 {
+.banner h1 {
     font-family: "Instrument Serif", serif;
     font-size: 5vw;
     margin-top: 100px;
@@ -79,10 +86,16 @@ figure {
 
 .gallery {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.gallery img {
-    width: 250px;
+.img-size{
+    width: 400px;
+    height: 280px;
+    margin: 10px;
 }
 
 .awareness {
@@ -96,3 +109,4 @@ figure {
     font-weight: 900;
     text-transform: capitalize;
 }
+

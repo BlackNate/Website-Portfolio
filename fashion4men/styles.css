@@ -74,11 +74,12 @@ footer p {
     background-repeat: no-repeat;
     height: 100vh;
     max-width: 100%;
+    flex-shrink: 5;
 }
 
 .overlay {
     margin: 0 20px;
-    
+    flex-shrink: 3;
 }
 
 .overlay h1 {
@@ -125,7 +126,8 @@ footer p {
 
 .arrival-item {
     margin: 0 20px;
-    max-width: 260px
+    max-width: 260px;
+    flex-grow: 5;
 }
 
 .arrival-item img {
@@ -269,5 +271,17 @@ footer p {
     text-align: center; 
 }
 
-
+@media screen and (max-width: 1000px) {
+    .intro-header {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-image: url("./Images/main\ photo.jpg");
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        height: 30vh;
+    }
+    
+}
 
