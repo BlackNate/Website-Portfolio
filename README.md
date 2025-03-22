@@ -2,7 +2,8 @@ The Website-Portolio host different website project I have created.
 Initially I start each project using HTML and CSS. Then I further develop it making it more responsive and clean up some code lines
 
 # Men Online Shopping Site
-![url](https://blacknate.github.io/Website-Portfolio/fashion4men/)
+https://blacknate.github.io/Website-Portfolio/fashion4men/
+
 Here i created a site for online shopping for men.
 further development of the site include:
 -Making it more responsive to any device size.
@@ -11,7 +12,8 @@ further development of the site include:
 -add a cart feature that tracks items added on the cart and calculates its total price.
 
 # Website about lion awareness
-![url](https://blacknate.github.io/Website-Portfolio/lions-den/)
+https://blacknate.github.io/Website-Portfolio/lions-den/
+
 Here i created a website that tries to rise awareness about lions and the importance in the ecosystem.
 further development of the site include:
 -Making it more responsive to any device size.
@@ -24,5 +26,7 @@ The Tea Cozy website project showcases the implementation of HTML and CSS to bui
 Flexbox is used extensively to manage the layout of different sections, ensuring flexibility and responsiveness.
 
 # Devchallenges projects:
+List of Devchallengies i have completed so far.
+
 1. ![url](https://blacknate.github.io/Website-Portfolio/Simple-Feature-Section/)
 2. ![url](https://blacknate.github.io/Website-Portfolio/Newsletter-site/)
