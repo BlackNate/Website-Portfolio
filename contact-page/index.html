@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="contact page interested in Becv company business pricing">
+        
+        <!--Google fonts [Be Vietnam Pro]-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./styles.css">
+
+        <title>Contact Page</title>
+    </head>
+    <body>
+        <div>
+           <img id="logo" src="./images/Logo.svg" alt="Becv company logo"> 
+        </div>
+        <header>
+            <h1>Interested in our business pricing?</h1>
+            <p>Fill out the form to view details and we’ll contact you as soon as possible.</p>
+        </header>
+        <form id="form">
+            <fieldset id="personal-info">
+
+                <!--Personal information section-->
+                <div class="container">
+                    <div class="inside-container">
+                        <label class="labels" for="name">Name</label>
+                        <input class="input-tab" type="text" id="name" name="name" placeholder="Enter your Name">
+                    </div>
+                    <div class="inside-container"> 
+                        <label class="labels" for="email">Company email</label>
+                        <input class="input-tab" type="email" id="email" name="email" placeholder="Email Address">
+                    </div>
+                </div>
+
+                <!--Dropdown Selection section-->
+                <div class="container">
+                    <div class="inside-container">
+                        <label class="labels" for="size">Company Size</label>
+                        <select class="dropdown" id="size" name="size">
+                            <option disabled selected>Select company size</option>
+                            <option value="10-20">10-20 employees</option>
+                            <option value="20-30">20-30 employees</option>
+                            <option value="40-50">40-50 employees</option>
+                            <option value="50-100">50-100 employees</option>
+                        </select>
+                    </div>
+                    <div class="inside-container">
+                        <label class="labels" for="subject">Subject</label>
+                        <select class="dropdown" id="subject" name="subject">
+                            <option disabled selected>Select Business Subject</option>
+                            <option value="landing-pages">Building Landing pages</option>
+                            <option value="email-marketing">Email Marketing</option>
+                            <option value="seo-optimize">SEO Optimization</option>
+                            <option value="web-design">Website Design & Development </option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--Message section-->
+                <div id="message-container">
+                    <label id="label-message" for="messge">Message</label>
+                    <textarea id="message-box" name="message" rows="5" cols="40" placeholder="Type your message here..."></textarea>
+                </div>
+            </fieldset>
+            <button id="btn">Contact Sales</button>
+        </form>
+    </body>
+</html>
