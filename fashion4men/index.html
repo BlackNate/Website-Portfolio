@@ -2,141 +2,171 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!--Fonts-->
+
+        <!--Banner font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!--document font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./styles/dropdown-menu.css">
+
         <title>Men's Fashion</title>
-        <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <header>
+        <div id="body-container">
+            <header>
 
-            <!--Navigation and loog section-->
-            <nav>
-                <div class="logo">
-                    <img src="./Images/logo.svg" alt="logo">
-                    <h2>Mens Fashion</h2>
+                <!--Logo img and title-->
+                <div class="logo-container">
+                    <img class="logo-img" src="./Images/logo.svg" alt="logo">
+                    <h2 class="logo-title">Mens Fashion</h2>
                 </div>
-                <div class="nav-links">
-                    <ul>
-                        <li>Catalogue</li>
-                            <ul class="dropdown"> <!--dropdown menu-->
-                                <li></li>
-                            </ul>
-                        <li>Fashion</li>
-                        <li>Favourite</li>
-                        <li>Lifestyle</li>
-                        <li><button>Sign up</button></li>
+
+                <!--Navigation and loog section-->
+                <nav id="main-nav">
+                    <ul class="navbar">
+                        <li id="catalogue">Catalogue</li>
+                        <li id="fashion">Fashion</li>
+                        <li id="favourite">Favourite</li>
+                        <li id="lifestyle">Lifestyle</li>
                     </ul>
-                </div>
-            </nav>  
-            
-            <!--Banner section-->
-            <section class="intro-header">
-                <div class="overlay">
-                    <h1>Explore<br><span>Unique</span><br>Clothes</h1>
-                    <p>Live for influential and innovative fashion!</p>
-                    <button class="shop-button">Shop Now</button>
-                </div>
-            </section>
-        </header>
+                </nav>  
 
-        <!--sponsored brands section-->
-        <section class="brands-img"></section>
+                <nav id="mobile-nav">
+                    <ul class="navbar">
+                        <li id="drop-menu">MENU</li>
+                        <ul class="mobile-nav-dropdown">
+                            <li id="catalogue">Catalogue</li>
+                            <li id="fashion">Fashion</li>
+                            <li id="favourite">Favourite</li>
+                            <li id="lifestyle">Lifestyle</li>
+                        </ul>
+                    </ul>
+                </nav>
+            </header>    
 
-        <!--New Arrivals Section-->
-        <section class="arrivals">
-            <h2 class="catalogue">New Arrivals</h2>
-            <div class="arrival-container">
-                <div class="arrival-item">
-                    <img src="./Images/Shop Denim.jpg" alt="men wearing denim jeans and jacket">
-                    <h3>Denim Wear</h3>
-                    <p class="explore">Explore now</p>
-                </div>
-                <div class="arrival-item">
-                    <img src="./Images/Shop Hoddies.jpg" alt="men wearing a pink hoddie">
-                    <h3>Hoddies and Sweaters</h3>
-                    <p class="explore">Explore now</p>
-                </div>
-                <div class="arrival-item">
-                    <img src="./Images/shop casual.jpg" alt="men wearing casual clothes, orange t-shirt and blue chinos">
-                    <h3>Casual Wear</h3>
-                    <p class="explore">Explore now</p>
-                </div>
-                <div class="arrival-item">
-                    <img src="./Images/shop shoes.jpg" alt="men laying on the floor, surrounded by shoes">
-                    <h3>Shoe Wear</h3>
-                    <p class="explore">Explore now</p>
-                </div>
-            </div>
-        </section>
-
-        <!--Promotional Section-->
-        <section class="promo">
-            <div class="promo-description">
-                <div class="promo-title">HOT PRICE DEAL!</div>
-                <h2>Get 20% off on selected formal clothes</h2>
-                <p>Spend R1000 or more on formal clothes and get 20% off.</p>
-                <button class="shop-button">Shop Now</button>
-            </div>
-            <div class="promo-item">
-                <img src="./Images/Formal clothing.jpg">
-            </div>
-
-        </section>
-
-        <!--Shop Accessories section-->
-        <section class="accessories">
-            <h2 class="catalogue">Accessories</h2>
-            <div class="accessories-container">
-                <div class="accessories-item">
-                    <img src="./Images/Men's Asseciories.jpg" alt="men sitting next to a table with accessories">
-                    <h3>Shop accessories</h3>
-                    <p class="explore">Explore now</p>
-                </div>
-                <div class="accessories-item">
-                    <img src="./Images/Shop facial hair products.jpg" alt="men with a beard holding facial hair products">
-                    <h3>Facial Hair Products</h3>
-                    <p class="explore">Explore now</p>
-                </div>
-            </div>
-        </section>
-
-        <!--Newsletter section-->
-        <section class="newsletter">
-            <h2>Join the shopping community to get monthly Promos</h2>
-            <p>Gets updates on our latest products and sales!</p>
-            <form class="newsletter-form">
-                <input type="email" id="email" name="id" placeholder="Enter your email">
-                <button>SUBSCRIBE</button>
-            </form>
-        </section>
-
-
-        <!--Footer-->
-        <footer>
-            <div class="footer-links">
-                <ul>
-                    <p>Mens Fashion</p>
-                    <li>About Us</li>
-                    <li>Catalogue</li>
-                    <li>Fashion</li>
-                    <li>Favourite</li>
-                    <li>Lifestyle</li>
-                </ul>
-                <ul>
-                    <p>Support</p>
-                    <li>Contact Us</li>
-                    <li>FAQ</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
-                    <li>Shipping & Return</li>
-                </ul>
-            </div>
-            <div class="logo">
-                    <img src="./Images/logo.svg" alt="logo">
-                    <div>
-                        <h2>Mens Fashion</h2>
+            <main">
+                <!--Banner section-->
+                <section id="banner-section">
+                    <div id="banner-container">
+                        <h1 id="banner-heading">Explore<br> <span id="banner-heading-text">Unique</span><br>Clothes</h1>
+                        <p>Live for influential and innovative fashion!</p>
+                        <button class="shop-button">Shop Now</button>
                     </div>
-            </div>
-            <p>&copy;Men fashion. All rights reserved.</p>
-        </footer>
+                </section>
+
+                <!--New Arrivals Section-->
+                <section id="arrivals-section">
+                    <h2 class="catalogue-heading">New Arrivals</h2>
+                    <div id="arrival-container">
+                        <div class="arrival-item-container">
+                            <img class="clothing-img" src="./Images/Shop Denim.jpg" alt="men wearing denim jeans and jacket">
+                            <h3 class="clothing-type">Denim Wear</h3>
+                            <a class="explore-link" href="#">Explore now</a>
+                        </div>
+                        <div class="arrival-item-container">
+                            <img class="clothing-img" src="./Images/Shop Hoddies.jpg" alt="men wearing a pink hoddie">
+                            <h3 class="clothing-type">Hoddies and Sweaters</h3>
+                            <a class="explore-link" href="#">Explore now</a>
+                        </div>
+                        <div class="arrival-item-container">
+                            <img class="clothing-img" src="./Images/shop casual.jpg" alt="men wearing casual clothes, orange t-shirt and blue chinos">
+                            <h3 class="clothing-type">Casual Wear</h3>
+                            <a class="explore-link" href="#">Explore now</a>
+                        </div>
+                        <div class="arrival-item-container">
+                            <img class="clothing-img" src="./Images/shop shoes.jpg" alt="men laying on the floor, surrounded by shoes">
+                            <h3 class="clothing-type">Shoe Wear</h3>
+                            <a class="explore-link" href="#">Explore now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Promotional Section-->
+                <section id="promo-section">
+                    <div id="promo-container">
+                        <div id="promo-description">
+                            <h2 class="h2-title-header">HOT PRICE DEAL!</h2>
+                            <h3>Get 20% off on selected formal clothes</h3>
+                            <p>Spend R1000 or more on formal clothes and get 20% off.</p>  
+                        </div>
+                        <button class="shop-button">Shop Now</button>
+                    </div>
+                    <div id="promo-item">
+                        <img id="promo-item-img" src="./Images/Formal clothing.jpg">
+                    </div>
+
+                </section>
+
+                <!--Shop Accessories section-->
+                <section id="accessories-section">
+                    <h2 class="catalogue-heading">Accessories</h2>
+                    <div id="accessories-container">
+                        <div class="accessories-item-container">
+                            <img class="clothing-img" src="./Images/Men's Asseciories.jpg" alt="men sitting next to a table with accessories">
+                            <h3 class="clothing-type">Shop accessories</h3>
+                            <a class="explore-link" href="#">Explore now</a>
+                        </div>
+                        <div class="accessories-item-container">
+                            <img class="clothing-img"  src="./Images/men's-socks.jpg" alt="socks stalked on top of each other">
+                            <h3 class="clothing-type">Socks and Underwear</h3>
+                            <a class="explore-link" href="#">Explore now</a>
+                        </div>
+                        <div class="accessories-item-container">
+                            <img class="clothing-img"  src="./Images/Shop facial hair products.jpg" alt="men with a beard holding facial hair products">
+                            <h3 class="clothing-type">Facial Hair Products</h3>
+                            <a class="explore-link" href="#">Explore now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Newsletter section-->
+                <section id="newsletter-section">
+                    <h2 class="h2-title-header">Join our newsletter community to get monthly shopping Promos</h2>
+                    <p id="newsletter-section-text">Gets updates on our latest products and sales!</p>
+                    <form id="newsletter-form">
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                        <button id="newsletter-button">SUBSCRIBE</button>
+                    </form>
+                </section>
+            </main>
+
+            <!--Footer-->
+            <footer>
+                <div class="footer-links">
+                    <div class="navbar-footer-container">
+                        <p class="navbar-footer-heading">Mens Fashion</p>
+                        <ul class="navbar-footer">
+                            <li>About Us</li>
+                            <li>Catalogue</li>
+                            <li>Fashion</li>
+                            <li>Favourite</li>
+                            <li>Lifestyle</li>
+                        </ul>
+                    </div>
+
+                    <div class="navbar-footer-container">
+                        <p class="navbar-footer-heading">Support</p>
+                        <ul class="navbar-footer">
+                            <li>Contact Us</li>
+                            <li>FAQ</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms of Service</li>
+                            <li>Shipping & Return</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>&copy;Men fashion. All rights reserved.</p>
+            </footer>
+        </div>
     </body>
 </html>
