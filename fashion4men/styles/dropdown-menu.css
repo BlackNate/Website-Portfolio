@@ -1,0 +1,62 @@
+
+/* Catalogue dropdown menu */
+.catalogue-menu {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1000;
+    top: 45px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b2d42;
+    color: #edf6f9;
+    padding: 0px;
+    width: 200px;
+    border: 1px solid red;
+}
+
+#catalogue:hover + .catalogue-menu{
+    display: block;
+    cursor: pointer;
+}
+
+.catalogue-menu li {
+    padding: 10px;
+}
+
+/* Fashion dropdown menu */
+.fashion-menu {
+    visibility: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    top: 45px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b2d42;
+    color: #edf6f9;
+    padding: 0px;
+    width: 200px;
+    border: 1px solid red;
+}
+
+#fashion:hover + .fashion-menu, .fashion-menu:hover{
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#fashion-menu {
+    display: 0;
+}
+
+.fashion-menu li {
+    padding: 10px;
+}
