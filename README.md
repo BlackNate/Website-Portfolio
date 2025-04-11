@@ -1,6 +1,18 @@
 The Website-Portolio host different website project I have created. 
 Initially I start each project using HTML and CSS. Then I further develop it making it more responsive and clean up some code lines
 
+# Car Auto shop website
+https://blacknate.github.io/Website-Portfolio/Car-Service-Site/
+My lasted project website that incorporates the following components:
+- 🔧 **Modern responsive layout** using CSS Grid and Flexbox
+- 🚗 **Interactive navigation bar** with hover effects
+- 🧾 **Call-to-action buttons** to get service quotes
+- 🛠️ **Services section** displaying common auto services with icons
+- 📰 **Informative content** explaining the company's services and expertise
+- 📊 **Statistics section** showcasing happy clients, vehicles serviced, and awards
+- 📷 **Image gallery** for showcasing services and team
+- 📱 **Responsive design** for tablets and mobile screens with media queries
+
 # Men Online Shopping Site
 https://blacknate.github.io/Website-Portfolio/fashion4men/
 
