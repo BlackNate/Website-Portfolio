@@ -1,0 +1,757 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #15110Cff;
+    background-color: whitesmoke;
+}
+
+/* CSS HEX */ 
+:root {
+--smoky-black: #15110Cff;
+--paynes-gray: #485D6Cff;
+--dun: #E0CEB8ff;
+--cadet-gray: #87A0A5ff;
+--desert-sand: #E5C3A7ff;
+}
+
+/* Styling for elements inside the header */
+header {
+    border-bottom: 2px solid black;
+    display: grid;
+    grid-template-columns: 1.2fr 4fr 1fr 0.25fr;
+    gap: 20px;
+    width: 100%;
+}
+
+#logo {  /* Logo */
+    display: block;
+    width: 150px;
+    height: auto;
+    grid-column: 1 / span 1;
+}
+
+#navbar-expanded { /* Navigation container */
+    grid-column: 2 / span 1;
+    align-self: center;
+    width: 100%;
+}
+
+#navbar-list { /* Navigation list  ul*/
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#navbar-list li {
+    width: 40%;
+    text-align: center;
+    padding: 0.5% 2%;
+}
+
+#navbar-list li a { /* Navigation links */
+    font-size: 1rem;
+    text-decoration: none;
+    color: #15110Cff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#navbar-list li a:hover{ /* Navigation links hover */
+    color: whitesmoke;
+    background-color: #485D6Cff;
+    padding: 5% 10%;
+    transition: 0.2s;;
+}
+
+#cart-quote-container { /* Cart and quote container */
+    grid-column: 3 / span 1;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+}
+
+#cart-quote-container h4 span {
+    font-size: 1rem;
+    padding:  5px ;
+    background-color:#E5C3A7ff ;
+}
+
+.quote-button { /* Quote button */
+    padding: 3% 2%;
+    font-size: 1rem;
+    width: 70%;
+    text-transform: uppercase;
+    background-color: #87A0A5ff;
+    color: whitesmoke;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px black;
+}
+
+.quote-button:hover { /* Quote button hover */
+    background-color: #485D6Cff;
+    color: whitesmoke;
+    transition: 0.2s;
+}
+
+#navbar-collapsed {
+    display: none;
+    grid-column: 2 / span 1;
+    align-self: center;
+    width: 100%;
+}
+
+/* Styling for elements inside the main */
+main {
+    display: grid;
+    grid-template: 1.1fr 0.1fr 1.3fr 0.1fr 0.8fr 0.8fr / repeat(4, 1fr);
+}
+
+/* Banner section elements */
+#banner-section {
+    grid-column: 1 / span 4;
+    background-image: url("./images/banner-cars.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 750px;
+}
+
+#banner-container {  /* Banner text container */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+#banner-container p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color:  #4B84B1ff;
+    text-shadow: 2px 2px 10px white;
+}
+
+#banner-container h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 2px 0px 2px rgb(177, 174, 171);
+}
+
+#learn-more-button {
+    padding: 1% 2%;
+    font-size: 1rem;
+    width: 20%;
+    text-transform: uppercase;
+    background-color: #87A0A5ff;
+    color: whitesmoke;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px black;
+}
+
+#learn-more-button:hover {
+    background-color: #485D6Cff;
+    color: whitesmoke;
+    transition: 0.2s;
+}
+
+/* repairs and services section elements */
+#repairs-services-section {
+    grid-column: 1 / span 4;;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #020201;
+    color: whitesmoke;
+}
+
+#repairs-services-container {
+    width: 25%;
+    height: 100%;
+
+}
+
+.repairs-services-h2 {
+    text-decoration: underline;
+
+}
+
+.repairs-services-p:hover {
+    font-size: 1.25rem;
+}
+
+.repairs-services {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-right: 2px solid grey;
+    height: 50%;
+}
+
+.repairs-services:hover {
+    background-color: rgb(77, 77, 77);
+    transition: 0.2s;
+}
+
+#repairs-services-item-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+    
+}
+
+.repair-service-item {
+    width: 15%;
+    height: 80px;
+    padding: 1%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.repair-service-item:hover {
+    background-color: rgb(77, 77, 77);
+    padding: 1%;
+    transition: 0.2s;
+}
+
+.img-icon {
+    filter: invert(100%);
+    display: block;
+    width: 35px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+/* article section elements */
+#article-section { 
+    grid-area: 3 / 1 / span 1 / span 2;
+    justify-items: center;
+    align-content: center;
+}
+
+#article-container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: left;
+}
+
+#article-container h1{
+    max-width: 90%;
+    align-self: center;
+    font-size: 2rem;
+    text-align: center;
+    
+}
+
+#article-container h3{
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: left;  
+}
+
+#article-container p {
+    max-width: 90%;
+    font-size: 1.25rem;
+    /*border: 2px solid #485D6Cff;*/
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+#list-of-services {
+    align-self: center;
+    width: 80%;
+}
+
+#list-of-services li {
+    font-size: 1.25rem;
+    list-style: none;
+}
+
+#article-gallery-container {
+    display: none;
+}
+
+/* span elements styling */
+#vertical-bar {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color:  #4B84B1ff;
+    padding-right: 1%;
+}
+
+.list-arrow {
+    font-size: 2rem;
+    padding-right: 1%;
+    color:  #4B84B1ff;
+}
+
+/* image section elements */
+#image-section{ 
+    grid-area: 3 / 3 / span 1 / span 2;
+    position: relative;
+}
+
+.main-img {
+    display: block;
+    width: 45%;
+    height: auto;
+}
+
+#main-img1 {
+    margin: 0 auto;
+    position: absolute;
+    top:5%;
+    left: 20%;
+    z-index: 1000;
+}
+
+#main-img2 {
+    position: absolute;
+    top: 45%;
+    left: 2%;
+    z-index: -1000;
+} 
+
+#main-img3 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: -1000;
+}
+
+/* car service records section elements */
+#car-service-records-section{ 
+    grid-area: 4 / 1 / span 1 / span 4;
+    border: 1px solid silver;
+    background-color:silver;
+}
+
+#car-service-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.car-service-records {
+    text-align: center;
+}
+
+.car-service-records h2 {
+    color:  #4B84B1ff;
+}
+
+.car-service-records p {
+    text-transform: uppercase;
+
+}
+
+.records-icons {
+    filter: invert(30%);
+    display: block;
+    width: 10%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+/* frames section with text */
+#frames-1-sections{ 
+    grid-area: 5 / 1 / span 1 / span 2;
+    border-right: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+
+}
+
+#frames-4-sections{ 
+    grid-area: 6 / 3 / span 1 / span 2;
+    border-left: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+}
+
+.frames-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    background-color: #15110Cff;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.frames-container h1 {
+    text-align: center;
+}
+
+.frames-container p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.frames-container ul li {
+    line-height: 2rem;
+    font-size: 1.25rem;
+}
+
+/* frames section with images */
+.img-frames {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+#frames-2-img-sections{ 
+    grid-area: 5 / 3 / span 1 / span 2;
+    border-left: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    background-image: url("./images/car-service-img3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#frames-3-img-sections{ 
+    grid-area: 6 / 1 / span 1 / span 2;
+    border-right: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+    background-image: url("./images/car-service-img4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer{ 
+    text-align: center;
+    background-color: #15110Cff;
+    border-top: 1.25px solid whitesmoke;
+    color: whitesmoke;
+    padding: 1%;
+}
+
+footer a {
+    text-decoration: none;
+    color: #E5C3A7ff;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px black;
+}
+
+footer a:hover {
+    color: #87A0A5ff;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+
+/* media queries */
+
+/* for min-width: 700px and max-width: 900px */
+@media only screen and (min-width: 701px) and (max-width: 900px) {
+    /* banner section */
+    #navbar-expanded {
+        display: none;
+    }
+    #navbar-collapsed {
+        display: block;
+    }
+    
+    #banner-section {
+        min-height: 500px;
+    }
+    
+    #banner-container {  /* Banner text container */
+        height: 30%;
+    }
+
+    #banner-container p {
+        font-size: 1rem;
+    }
+    
+    #banner-container h1 {
+        font-size: 2rem;
+    }
+    
+    #learn-more-button {
+        padding: 0.8% 1.5%;
+        font-size: 0.9rem;
+    }
+
+    /* repairs and services section */
+    .repairs-services-h2, .repairs-services-p {
+        font-size: 0.9rem;
+    }
+
+    .repair-services-text {
+        font-size: 0.8rem;
+    }
+
+    /* article section */
+
+    #article-container h1{
+        font-size: 1.25rem;
+    }
+
+    #article-container h3 {
+        font-size: 0.95rem;
+    }
+    
+    #article-container p {
+        font-size: 0.85rem;
+    }
+     
+    #list-of-services li {
+        font-size: 0.85rem;
+    }
+    
+    /* span elements styling */
+    #vertical-bar {
+        font-size: 1rem;
+    }
+    
+    .list-arrow {
+        font-size: 1.2rem;
+    }
+
+    /* car service records section elements */
+    .car-service-records h2 {
+        color:  #4B84B1ff;
+        font-size: 1.25rem;
+    }
+    
+    .car-service-records p {
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+
+    /*frames section with text */
+
+    .frames-container h1 {
+        font-size: 1.4rem;
+    }
+    .frames-container p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .frames-container ul li {
+        line-height: 2rem;
+        font-size: 1rem;
+    }
+}
+
+
+/* for min-width: 500px and max-width: 700px */
+@media only screen and (min-width: 501px) and (max-width: 700px) {
+    main {
+        display: grid;
+        grid-template: 0.3fr 0.1fr 1.5fr 0.1fr 0.5fr 0.5fr  / repeat(4, 1fr);
+    }
+
+    /*menu settings*/
+    #navbar-expanded {
+        display: none;
+    }
+
+    #navbar-collapsed {
+        display: block;
+        grid-column: 2 / span 1;
+        align-self: center;
+        width: 100%;
+    }
+
+    #cart-quote-container {
+        grid-column: 3 / span 1;
+        align-self: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 250px;
+    }
+
+
+     /* banner section */
+    
+    #banner-section {
+        min-height: 500px;
+    }
+
+    #banner-container {  /* Banner text container */
+        height: 35%;
+    }
+
+    #banner-container p {
+        font-size: 1.25rem;
+    }
+    
+    #banner-container h1 {
+        font-size: 1.85rem;
+    }
+    
+    #learn-more-button {
+        min-width: 30%;
+        padding: 1% 2%;
+        font-size: 1rem;
+    }
+
+    /* repairs and services section elements */
+    #repairs-services-section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #repairs-services-container {
+        width: 100%;
+        height: 100%;
+    }
+    .repairs-services {
+        width: 100%;
+        height: 50px;
+        border-right: none;
+        border-bottom: 2px solid grey;
+    }
+
+    #repairs-services-item-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .repair-service-item {
+        width: 20%;
+        height: 80px;
+        padding: 1%;
+        text-align: center;
+    }
+
+    .repair-services-text {
+        font-size: 0.8rem;
+    }
+
+    /* article section elements */
+    #article-section { 
+        grid-area: 3 / 1 / span 1 / span 4;
+        justify-items: center;
+        align-content: center;
+    }
+
+    #article-container {
+        width: 90%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: left;
+    }
+
+    #article-container h1{
+        font-size: 1.25rem;
+    }
+
+    #article-container h3 {
+        font-size: 0.95rem;
+    }
+    
+    #article-container p {
+        font-size: 0.9rem;
+    }
+     
+    #list-of-services li {
+        font-size: 0.9rem;
+    }
+    
+    /* span elements styling */
+    #vertical-bar {
+        font-size: 1rem;
+    }
+    
+    .list-arrow {
+        font-size: 1.2rem;
+    }
+
+    #image-section {
+        display: none;
+    }
+
+    #article-gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;        
+    }
+
+    .gallery-img {
+        display: block;
+        width: 20%;
+        height: auto;
+        margin-top: 2%;
+    }
+
+    /* car service records section elements */
+
+    #car-service-records-section{
+        padding: 1.5%;
+    }
+
+    .car-service-records h2 {
+        font-size: 1.25rem;
+    }
+    
+    .car-service-records p {
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+    
+    .records-icons {
+        display: none;
+    }
+    
+    /*frames section with text */
+
+    .frames-container h1 {
+        font-size: 0.85rem;
+    }
+    .frames-container p {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    
+    .frames-container ul li {
+        line-height: 2rem;
+        font-size: 0.65rem;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+}
+
+
