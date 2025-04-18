@@ -109,6 +109,10 @@ header {
     width: 100%;
 }
 
+#navbar-dropdown {
+    display: none;
+}
+
 /* Styling for elements inside the main */
 main {
     display: grid;
@@ -478,7 +482,72 @@ footer a:hover {
     }
     #navbar-collapsed {
         display: block;
+        grid-column: 2 / span 1;
+        align-self: right;
+        width: 100%;
     }
+
+    #navbar-list-menu {
+        list-style: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+
+    #navbar-list-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5% 2%;
+        list-style-type: none;
+    }
+    
+    #navbar-list-menu li a { /* Navigation links */
+        font-size: 1rem;
+        text-decoration: none;
+        color: #15110Cff;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    #menu-dropdown {
+        position: relative;
+    }
+
+
+    #navbar-dropdown li {
+        margin: 1% 0;
+        list-style-type: none;
+        text-align: left;
+    }
+
+    #navbar-dropdown li a {
+        color: whitesmoke;
+        padding: 0.5% 2%;
+    }
+
+    #navbar-dropdown li a:hover {
+        background-color: #485D6Cff;
+        padding: 0.5% 10%;
+        transition: 0.2s;
+    }
+
+    #menu-dropdown:hover + #navbar-dropdown,  #navbar-dropdown:hover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 6.5%;
+        left: 0;
+        right: 0;
+        bottom: 60%;
+        padding: 0px ;
+        background-color: #4B84B1ff;
+    }
+
     
     #banner-section {
         min-height: 500px;
@@ -576,12 +645,72 @@ footer a:hover {
     #navbar-expanded {
         display: none;
     }
-
     #navbar-collapsed {
         display: block;
         grid-column: 2 / span 1;
-        align-self: center;
+        align-self: right;
         width: 100%;
+    }
+
+    #navbar-list-menu {
+        list-style: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+
+    #navbar-list-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5% 2%;
+        list-style-type: none;
+    }
+    
+    #navbar-list-menu li a { /* Navigation links */
+        font-size: 1rem;
+        text-decoration: none;
+        color: #15110Cff;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    #menu-dropdown {
+        position: relative;
+    }
+
+
+    #navbar-dropdown li {
+        margin: 1% 0;
+        list-style-type: none;
+        text-align: left;
+    }
+
+    #navbar-dropdown li a {
+        color: whitesmoke;
+        padding: 0.5% 2%;
+    }
+
+    #navbar-dropdown li a:hover {
+        background-color: #485D6Cff;
+        padding: 0.5% 10%;
+        transition: 0.2s;
+    }
+
+    #menu-dropdown:hover + #navbar-dropdown,  #navbar-dropdown:hover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 7%;
+        left: 0;
+        right: 0;
+        bottom: 65%;
+        padding: 0px ;
+        background-color: #4B84B1ff;
     }
 
     #cart-quote-container {
@@ -775,13 +904,74 @@ footer a:hover {
     #navbar-expanded {
         display: none;
     }
-
     #navbar-collapsed {
         display: block;
         grid-column: 2 / span 1;
-        align-self: center;
-        min-width: 100px
+        align-self: right;
+        width: 100%;
     }
+
+    #navbar-list-menu {
+        list-style: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+
+    #navbar-list-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5% 2%;
+        list-style-type: none;
+    }
+    
+    #navbar-list-menu li a { /* Navigation links */
+        font-size: 1rem;
+        text-decoration: none;
+        color: #15110Cff;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    #menu-dropdown {
+        position: relative;
+    }
+
+
+    #navbar-dropdown li {
+        margin: 1% 0;
+        list-style-type: none;
+        text-align: left;
+    }
+
+    #navbar-dropdown li a {
+        color: whitesmoke;
+        padding: 0.5% 2%;
+    }
+
+    #navbar-dropdown li a:hover {
+        background-color: #485D6Cff;
+        padding: 0.5% 10%;
+        transition: 0.2s;
+    }
+
+    #menu-dropdown:hover + #navbar-dropdown,  #navbar-dropdown:hover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 7%;
+        left: 0;
+        right: 0;
+        bottom: 70%;
+        padding: 0px ;
+        background-color: #4B84B1ff;
+    }
+
 
     #cart-quote-container {
         grid-column: 3 / span 1;
@@ -853,6 +1043,7 @@ footer a:hover {
         align-items: center;
         width: 100%;
         height: 100%;
+        flex-grow: 1;
     }
 
     .repair-service-item {
@@ -888,8 +1079,7 @@ footer a:hover {
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
-        align-items: left;
-        border: 2px solid #485D6Cff;
+        align-items: left;;
     }
 
     #article-container h1{
@@ -1009,13 +1199,74 @@ footer a:hover {
     #navbar-expanded {
         display: none;
     }
-
     #navbar-collapsed {
         display: block;
         grid-column: 2 / span 1;
-        align-self: center;
-        min-width: 100px
+        align-self: right;
+        width: 100%;
     }
+
+    #navbar-list-menu {
+        list-style: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+
+    #navbar-list-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5% 2%;
+        list-style-type: none;
+    }
+    
+    #navbar-list-menu li a { /* Navigation links */
+        font-size: 1rem;
+        text-decoration: none;
+        color: #15110Cff;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    #menu-dropdown {
+        position: relative;
+    }
+
+
+    #navbar-dropdown li {
+        margin: 1% 0;
+        list-style-type: none;
+        text-align: left;
+    }
+
+    #navbar-dropdown li a {
+        color: whitesmoke;
+        padding: 0.5% 2%;
+    }
+
+    #navbar-dropdown li a:hover {
+        background-color: #485D6Cff;
+        padding: 0.5% 10%;
+        transition: 0.2s;
+    }
+
+    #menu-dropdown:hover + #navbar-dropdown,  #navbar-dropdown:hover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 7%;
+        left: 0;
+        right: 0;
+        bottom: 70%;
+        padding: 0px ;
+        background-color: #4B84B1ff;
+    }
+
 
     #cart-quote-container {
         grid-column: 3 / span 1;
@@ -1123,7 +1374,7 @@ footer a:hover {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: left;
-        border: 2px solid #485D6Cff;
+       
     }
 
     #article-container h1{
