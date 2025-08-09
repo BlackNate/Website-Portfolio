@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="author" content="Black Nate" />
+        <meta name="description" content="Easily book your flights online – choose round trip, one-way, or multi-city tickets. Find the best fares and plan your journey with our simple, secure booking system.">
+
+
+        <!--Montserrat Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!--Opens Sans font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        
         <title>BookFlight</title>
         <link rel="stylesheet" href="./styles.css">
     </head>
@@ -13,11 +29,11 @@
          <main>
             <h1>Your Next Flight is Just a Click Away</h1>
             <div class="trip-type-booking">
-                <button id="round-trip">ROUND TRIP</button>
-                <button id="one-trip">ONEWAY TRIP</button>
-                <button id="multi-trip">MULTI CITY</button>
+                <a href="./index.html" id="round-trip">ROUND TRIP</a>
+                <a href="./oneWayStop.html" id="one-trip">ONEWAY TRIP</a>
+                <a href="./multiTrip.html" id="multi-trip">MULTI CITY</a>
             </div>
-            <section class="booking-section">
+            <div class="booking-section">
                 <form action="#">
                     <!--Location booking section /* 1st level div tags */-->
                     <div class="book-location">
@@ -25,7 +41,7 @@
                         <div class="city-container">
                             <label for="departure-city">Departure City</label>
                             <select id="departure-city">
-                                <option disabled>Select option</option>
+                                <option disabled selected>Select option</option>
                             </select>
                         </div>
 
@@ -33,7 +49,7 @@
                         <div class="city-container">
                             <label for="destination-city">Destination City</label>
                             <select id="destination-city">
-                                <option disabled>Select option</option>
+                                <option disabled selected>Select option</option>
                             </select>
                         </div>
                     </div>
@@ -61,7 +77,7 @@
                         <div class="class-passenger-container">
                             <label for="sit-class-type">Class</label>
                             <select id="sit-class-type">
-                                <option disabled>Select Option</option>
+                                <option disabled selected>Select Option</option>
                                 <option value="economy">Economy</option>
                                 <option value="premium-economy">Premium Economy</option>
                                 <option value="business">Business </option>
@@ -95,7 +111,7 @@
 
                     <button id="submit-button" type="submit">Search Flights</button>
                 </form>
-            </section>
+            </div>
          </main>
 
          <footer>

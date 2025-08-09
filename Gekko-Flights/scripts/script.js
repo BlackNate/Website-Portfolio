@@ -1,8 +1,20 @@
 import { location } from "./locationList.js"
 
+// Dropdown Select Option Elements
+const departureCityEl = document.getElementById("departure-city")
+const destinationCityEl = document.getElementById("destination-city")
+
+// Anchor links Elements
+const roundTripEl = document.getElementById("round-trip");
+const oneTripEl = document.getElementById("one-trip");
+const multiTripEl = document.getElementById("multi-trip");
+const tripArray  = [roundTripEl, oneTripEl, multiTripEl];
+
+const tripTypeBookingEL = document.querySelector(".trip-type-booking");
+
+
+//Prints the location from the locationList.js file
 document.addEventListener("DOMContentLoaded", () => {
-    const departureCityEl = document.getElementById("departure-city")
-    const destinationCityEl = document.getElementById("destination-city")
 
     if (departureCityEl && destinationCityEl) {
         for (let country in location) {
@@ -24,3 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Element with ID 'departure-city' not found.");
     }
 });
+
+
+//Check the current page URL
+const currentURL = window.location.pathname   //gets current URL pathname
+
+for (let trip of tripArray) {
+    if (currentURL === trip.pathname || currentURL === "/") {
+        trip.style.backgroundColor = "#0477BF";
+        trip.style.color = "#F2C36B";
+    }
+}
+
+

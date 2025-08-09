@@ -1,26 +1,3 @@
-/* TABLE OF CONTENT 
-    1. Header elements Styling sections
-        1.1 header img
-        1.2 header span
-
-    2. Main elements Styling 
-        2.1 h1
-        2.2 Trip-type-booking Section
-            2.2.1 .trip-type-booking
-                .trip-type-booking button:hover
-                .trip-type-booking button:active
-        2.3 Booking Section
-            2.3.1 Book Location & Book Date
-                City-container
-                Departure-city & destination-city
-                Date-container
-                    Date-container input
-        2.4 Passenger Sits section
-            2.4.1 passengers container 
-
-*/
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -33,6 +10,7 @@ html, body {
     height: 100%;
     color: rgb(15, 15, 15);
     overflow-x: hidden;
+    font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -41,6 +19,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+}
+
+h1, h2 {
+    font-family: "Montserrat", sans-serif;
 }
 
 /* 1. Header elements Styling sections */
@@ -103,29 +85,27 @@ main h1 {
 }
 
 /* 2.2.1 .trip-type-booking */
-.trip-type-booking button {
+.trip-type-booking a {
     font-size: 1.25rem;
-    font-weight: 800;
+    font-weight: 700;
     color: white;
     padding: 3% 5%;
-    background-color: hsla(100, 3%, 18%, 0.3)
-;
+    background-color: hsla(100, 3%, 18%, 0.3);
+    text-decoration: none;
     border-radius: 15px 15px 0 0 ;
     border: none;
     outline: none;
 }
 
-.trip-type-booking button:hover,
-.trip-type-booking button:focus {
-    background-color: #0477BF;
-    border-radius: 15px 15px 0 0 ;
-    color: #F2C36B;
+.trip-type-booking a:hover,
+.trip-type-booking a:focus {
+    background-color: #F2C36B;
+    color: rgb(22, 22, 22);
 }
 
-.trip-type-booking button:active {
-    background-color: #F2C36B;
-    color: black;
-    border-radius: 15px 15px 0 0 ;
+.trip-type-booking a:active {
+    background-color: #0477BF;
+    color: #F2C36B;
 }
 
 
@@ -181,6 +161,7 @@ main h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .city-container label, 
@@ -277,6 +258,12 @@ footer {
     display: block;
     margin: 0 auto;
     text-align: center;
+}
+
+.multi-flight-container {
+    border-bottom: 2px solid darkslategray;
+    padding: 2% 0;
+
 }
 
 @media only screen and (min-width:1025px) {
