@@ -1,0 +1,424 @@
+/* TABLE OF CONTENT 
+    1. Header elements Styling sections
+        1.1 header img
+        1.2 header span
+
+    2. Main elements Styling 
+        2.1 h1
+        2.2 Trip-type-booking Section
+            2.2.1 .trip-type-booking
+                .trip-type-booking button:hover
+                .trip-type-booking button:active
+        2.3 Booking Section
+            2.3.1 Book Location & Book Date
+                City-container
+                Departure-city & destination-city
+                Date-container
+                    Date-container input
+        2.4 Passenger Sits section
+            2.4.1 passengers container 
+
+*/
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    color: rgb(15, 15, 15);
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url("./background-img.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* 1. Header elements Styling sections */
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1% 2%;
+    width: 100%;
+}
+
+/* 1.1 Header img */
+header img {
+    display: block;
+    width: 5%;
+    height: auto;
+}
+
+/* 1.2 Header span */
+header span {
+    margin: 1%;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+}
+
+#logo-text {
+    color: #F4BD00;
+} 
+
+/* 2. Main elements Styling sections */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 60%;
+    margin-bottom: 5%;
+    
+}
+
+/* 2.1 h1 */
+main h1 {
+    text-align: center;
+    margin-bottom: 2%;
+    color: white;
+    padding: 4%;
+    word-spacing: 0.25rem;
+}
+
+
+/* 2.2 Trip-type-booking Section */ 
+.trip-type-booking {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* 2.2.1 .trip-type-booking */
+.trip-type-booking button {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: white;
+    padding: 3% 5%;
+    background-color: hsla(100, 3%, 18%, 0.3)
+;
+    border-radius: 15px 15px 0 0 ;
+    border: none;
+    outline: none;
+}
+
+.trip-type-booking button:hover,
+.trip-type-booking button:focus {
+    background-color: #0477BF;
+    border-radius: 15px 15px 0 0 ;
+    color: #F2C36B;
+}
+
+.trip-type-booking button:active {
+    background-color: #F2C36B;
+    color: black;
+    border-radius: 15px 15px 0 0 ;
+}
+
+
+/* 2.3 Booking Section */
+.booking-section {
+    background-color: 	hsla(36, 75%, 51%,0.7);
+    width: 100%;
+    padding: 5%;
+    font-weight: 500;
+    border-radius: 20px 20px;
+}
+
+.booking-section form {
+    /*border: 2px red solid;*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+/* 1st level div tags */ 
+.book-location,
+.book-date,
+.class-passenger {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+}
+/*
+.book-location {
+    border: 2px midnightblue solid;
+
+}
+
+.book-date {
+    border: 2px white solid;
+  
+}
+
+.class-passenger {
+    border: 2px green solid ;
+}*/
+
+/* 2nd level div tags */
+.city-container, 
+.date-container, 
+.class-passenger-container {
+    /*border: 2px yellow solid;*/
+    width: 50%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.city-container label, 
+.date-container label, 
+.class-passenger-container label {
+    padding-bottom: 1%;
+    width: 100%;
+} 
+
+.city-container  select, 
+.date-container  input, 
+.class-passenger-container select {
+    padding: 4%;
+}
+
+/* 3rd level div tags */  
+.passengers-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.passengers-container .adult-child {
+    align-self: center;
+    width: 60%;
+}
+
+/* 4th level div tags */
+.passenger-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    
+    width: 40%;
+}
+
+.passenger-buttons button, 
+.passenger-buttons p {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 0% 10%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.passenger-buttons button {
+    border: #024873 1px solid;
+    background-color: transparent;
+}
+
+.passenger-buttons button:hover, 
+.passenger-buttons button:focus {
+    background-color: #F2C36B;
+}
+
+.passenger-buttons p {
+    background-color: whitesmoke;
+}
+
+
+
+/* span elements styles */
+.age-text {
+    font-size: 1.125rem;
+    font-weight: normal;
+}
+
+
+#submit-button {
+    display: block;
+    padding: 1.5% 4%;
+    margin: 5% auto 0 auto;
+    background-color: #024873;
+    border: none;
+    border-radius: 25px 25px ;
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 700;
+    transition: ease 6ms;
+    cursor: pointer;
+}
+
+#submit-button:hover,
+#submit-button:focus {
+    background-color: #0477BF;
+}
+
+footer {
+    border-top: 2px solid grey;
+    padding-top: 3%;
+    color: white;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media only screen and (min-width:1025px) {
+    main {
+        padding-left: 3%;
+    }
+}
+
+/* Media query Sytling */
+@media only screen and (max-width:1024px) {
+    /* 1.1 Header img */
+    header img {
+        width: 6%;
+    }
+
+    /* 1.2 Header span */
+    header span {
+        margin: 1%;
+        font-size: 2.0rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: white;
+        width: 100%;
+    }
+
+    main {
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        margin: 0% auto 80px auto;
+    }
+}
+
+/* Media query Sytling */
+@media only screen and (max-width:800px) {
+    header {
+        margin: 2% 3%;
+    }
+    /* 1.1 Header img */
+    header img {
+        width: 7%;
+    }
+
+    /* 1.2 Header span */
+    header span {
+        margin: 1%;
+        font-size: 1.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: white;
+        width: 100%;
+    }
+
+
+}
+
+/* Media query Sytling */
+@media only screen and (max-width:650px) {
+    header {
+        margin: 2% 3%;
+    }
+    /* 1.1 Header img */
+    header img {
+        width: 8%;
+    }
+
+    /* 1.2 Header span */
+    header span {
+        margin: 1%;
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: white;
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        margin: 0% auto 10% auto;
+    }
+
+    .booking-section {
+        border-radius: 0px;
+    }
+
+    /* 2.1 h1 */
+    main h1 {
+        font-size: 2rem;
+        padding: 8%;
+    }
+}
+
+
+/* Media query Sytling */
+@media only screen and (max-width:580px) {
+    header {
+        margin: 2% 3%;
+    }
+    /* 1.1 Header img */
+    header img {
+        width: 8%;
+    }
+
+    /* 1.2 Header span */
+    header span {
+        margin: 1%;
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: white;
+        width: 100%;
+    }
+
+    /* 2.1 h1 */
+
+    main h1 {
+        font-size: 1.8rem;
+        padding: 10%;
+    }
+
+    .trip-type-booking button {
+    font-size: 1rem;
+    }
+
+    .booking-section form {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* 1st level div tags */ 
+    .book-location,
+    .book-date,
+    .class-passenger {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 3%;
+    }
+
+    /* 2nd level div tags */
+    .city-container, 
+    .date-container, 
+    .class-passenger-container {
+        width: 100%;
+    }
+}
