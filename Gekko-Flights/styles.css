@@ -25,6 +25,10 @@ h1, h2 {
     font-family: "Montserrat", sans-serif;
 }
 
+h2 {
+    margin: 2% 0;
+}
+
 /* 1. Header elements Styling sections */
 header {
     display: flex;
@@ -257,13 +261,14 @@ footer {
     width: 95%;
     display: block;
     margin: 0 auto;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 .multi-flight-container {
     border-bottom: 2px solid darkslategray;
     padding: 2% 0;
-
+    width: 100%;
 }
 
 @media only screen and (min-width:1025px) {

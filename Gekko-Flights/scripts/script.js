@@ -42,9 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
 const currentURL = window.location.pathname   //gets current URL pathname
 
 for (let trip of tripArray) {
-    if (currentURL === trip.pathname || currentURL === "/") {
+    if (currentURL === trip.pathname) {
         trip.style.backgroundColor = "#0477BF";
         trip.style.color = "#F2C36B";
+    } else if (currentURL === "/"){
+        roundTripEl.style.backgroundColor = "#0477BF";
+        roundTripEl.style.color = "#F2C36B";
     }
 }
 
