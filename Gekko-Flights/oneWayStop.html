@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="author" content="Black Nate" />
+        <meta name="description" content="Easily book your flights online – choose round trip, one-way, or multi-city tickets. Find the best fares and plan your journey with our simple, secure booking system.">
+        
+        <!--Montserrat Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!--Opens Sans font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+        <title>BookFlight</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <header>
+            <img src="./bookflight-logo.svg" alt="Book Flight Logo">
+            <span><span id="logo-text">Gekko</span>Flights</span>
+         </header>
+         <main>
+            <h1>Your Next Flight is Just a Click Away</h1>
+            <div class="trip-type-booking">
+                <a href="./index.html" id="round-trip">ROUND TRIP</a>
+                <a href="./oneWayStop.html" id="one-trip">ONEWAY TRIP</a>
+                <a href="./multiTrip.html" id="multi-trip">MULTI CITY</a>
+            </div>
+            <div class="booking-section">
+                <form action="#">
+                    <!--Location booking section /* 1st level div tags */-->
+                    <div class="book-location">
+                        <!--Departure City /* 2nd level div tags */-->
+                        <div class="city-container">
+                            <label for="departure-city">Departure City</label>
+                            <select id="departure-city">
+                                <option disabled selected>Select option</option>
+                            </select>
+                        </div>
+
+                        <!--Destination City /* 2nd level div tags */-->
+                        <div class="city-container">
+                            <label for="destination-city">Destination City</label>
+                            <select id="destination-city">
+                                <option disabled selected>Select option</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!--Date booking section /* 1st level div tags */-->
+                    <div class="book-date">
+                        <!--Departue Date /* 2nd level div tags */-->
+                        <div class="date-container">
+                            <label for="depart-date">Depart Date</label>
+                            <input type="date" name="depart-date" id="depart-date" required>
+                        </div>
+
+                            <!--Plane sit Class /* 2nd level div tags */-->
+                        <div class="class-passenger-container">
+                            <label for="sit-class-type">Class</label>
+                            <select id="sit-class-type">
+                                <option disabled selected>Select Option</option>
+                                <option value="economy">Economy</option>
+                                <option value="premium-economy">Premium Economy</option>
+                                <option value="business">Business </option>
+                                <option value="first-class">First Class</option>
+                            </select>
+                            <div class="checkbox-container"></div>
+                        </div>
+                    </div>
+
+
+                    <!--Passenger sits section /* 1st level div tags */-->
+                    <div class="class-passenger">
+
+                        <!--NUmbers of Passengers /* 2nd level div tags */-->
+                        <div class="class-passenger-container">
+                            <div class="passengers-container"> <!--/* 3rd level div tags */-->
+                                <p class="adult-child">Adult <span class="age-text">(12+ yrs)</span></p>
+                                <div class="passenger-buttons">  <!--/* 4th level div tags */-->
+                                    <button>-</button>
+                                    <p id="adult-passengers">1</p>
+                                    <button>+</button>
+                                </div>
+                            </div>
+
+                            <!--Child Passengers-->
+                            <div class="passengers-container"> <!--/* 3rd level div tags */-->
+                                <p  class="adult-child">Child <span class="age-text">(2-11 yrs)</span></p>
+                                <div class="passenger-buttons"> <!--/* 4th level div tags */-->
+                                    <button type="button">-</button>
+                                    <p id="child-passengers">1</p>
+                                    <button  type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="submit-button" type="submit">Search Flights</button>
+                </form>
+            </div>
+         </main>
+
+         <footer>
+            <p>Copyright 2025 Gekko Flights. All rights reserved.</p>
+         </footer>
+
+         <script type="module" src="./scripts/script.js"></script>
+    </body>
+</html>
