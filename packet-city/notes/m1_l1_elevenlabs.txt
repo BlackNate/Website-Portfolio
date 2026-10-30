@@ -1,0 +1,102 @@
+M1 L1 First Hello: narration for ElevenLabs
+Paste one beat at a time (the text under each heading, not the heading).
+Numbers and commands are spelled out so the voice reads them correctly.
+The <break> tags work with the Multilingual v2, Turbo and Flash models. Delete them if you use Eleven v3.
+
+=== 1. HOOK (save as m1_l1_hook) ===
+
+This is Packet City. Right now, it's just one empty street... <break time="0.8s" />
+
+...and one house. Maya has just moved in. <break time="0.8s" />
+
+She opens her laptop to send her very first message... <break time="1.0s" />
+
+...and nothing. No internet. <break time="1.0s" />
+
+To fix this, we first need to know what is supposed to happen when a laptop says hello to the world. This is Lesson One: First Hello.
+
+=== 2. CONCEPT (save as m1_l1_concept) ===
+
+Let's start with Maya's laptop. Any device that sends or receives data on a network is called a host. <break time="0.5s" />
+
+Maya's laptop is a host. <break time="1.0s" />
+
+So is her phone. So is a games console, a smart TV, even a doorbell camera. If it sends or receives data, it's a host. <break time="0.8s" />
+
+A host on its own can't reach anything outside the house. It needs a way out. That's the job of this box: the router. Her phone joins it over Wi-Fi, which we'll look at later in the course. <break time="0.5s" />
+
+A router connects networks together, and passes traffic between them. <break time="0.8s" />
+
+On one side is Maya's home network: everything inside the house. <break time="0.5s" />
+
+On the other side is everything else: the internet, which is really millions of other networks, joined together. <break time="0.8s" />
+
+Now let's join the laptop to the router. A connection between two devices is called a link. Here, the link is a copper Ethernet cable. <break time="0.5s" />
+
+One cable, two ends, one link. <break time="0.8s" />
+
+Watch the router's port as the plug clicks in. That small light is the link light. It comes on only when the devices at both ends agree there's a working connection on that cable. <break time="0.5s" />
+
+Green means the cable is connected and alive. Dark means it isn't. <break time="1.0s" />
+
+Now Maya's laptop can say hello. Picture each piece of data as a courier, carrying an envelope. It leaves the laptop, and crosses the link to the router... <break time="0.5s" />
+
+...and the router sends it out, toward the internet. <break time="0.5s" />
+
+An answer comes back the same way, router to laptop. A message out, a reply back: that's a conversation. <break time="0.8s" />
+
+So, three pieces: hosts, links, and a router to reach other networks. And one little light that tells you whether the cable between two of them is alive.
+
+=== 3. REAL TERMS (save as m1_l1_realterms) ===
+
+Let's swap the city words for the words the exam uses. <break time="0.8s" />
+
+Maya's laptop and phone are hosts, also called end devices. <break time="1.0s" />
+
+The box by the door is a router. In homes and small offices, it's usually a so-ho router, S O H O, which stands for small office, home office. It also has a small switch and a Wi-Fi access point built in. We'll take those apart in later lessons. <break time="1.0s" />
+
+The cable is a link: here, copper twisted-pair Ethernet. <break time="1.0s" />
+
+The little green lamp is the link light, or link L E D. It shows the physical connection is up. <break time="1.0s" />
+
+The world outside is the internet: other networks, reached through the router. <break time="1.0s" />
+
+And the courier with the envelope is a packet: one small unit of data, on its way somewhere.
+
+=== 4. WALKTHROUGH (save as m1_l1_walkthrough) ===
+
+Let's test Maya's connection the way a technician would, with a tool called ping. Ping sends a small test message to an address, and waits for a reply. <break time="1.0s" />
+
+We'll ping one dot one dot one dot one, the address of a well-known server on the internet. "Dash c three" means: send three, and stop. <break time="1.0s" />
+
+First ping. Hop one: laptop to router, across the cable. Hop two: router, out to the internet. Then the reply comes home, the same way. <break time="1.0s" />
+
+Two more. Same path, same result. <break time="1.5s" />
+
+Three sent, three received, zero percent loss. That tells us every link on the path works, in both directions. The time, about fourteen milliseconds, is how long each round trip took.
+
+=== 5. WHAT WENT WRONG? (save as m1_l1_wrong) ===
+
+The next morning, Maya moves her desk over to the window. She plugs everything back in... <break time="1.0s" />
+
+...and the internet's gone again. <break time="1.0s" />
+
+Ping can't even get started. "Network is unreachable." The laptop has no working link to send anything on. <break time="1.0s" />
+
+Your turn. The laptop is on. The router is on. But the link light on the router's port is dark. What's the most likely problem? Pause the video if you want more time. <break time="3.0s" /> <break time="2.5s" />
+
+It's B. A dark link light means a physical problem with that one cable, or its ports. If Maya's internet provider were down, the cable between her laptop and her router would still be fine, so the light would stay on. <break time="1.0s" />
+
+Here's the culprit. The plug went in, but its clip never clicked, so it slid back out of the port. <break time="1.0s" />
+
+Push it in until it clicks... the link light comes back... and ping works again. <break time="1.0s" />
+
+So here's your first troubleshooting rule. Link light dark? Check the physical connection first. Reseat both ends of the cable, then try another cable, or another port. <break time="1.0s" />
+
+And if the light is on, but there's still no internet? Then that cable is fine, and the problem is somewhere else. Finding where is what the rest of this course is about.
+
+=== 6. RECAP (save as m1_l1_recap) ===
+
+Hosts are the devices people use, links join them, and a router connects the home network to other networks, like the internet. A link light shows that a cable is connected and alive at both ends. If it's dark, check the physical connection first. <break time="1.5s" />
+
+Next time: two houses, and who asks versus who answers. See you in Lesson Two.
