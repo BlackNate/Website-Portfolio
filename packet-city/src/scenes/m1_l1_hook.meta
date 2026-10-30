@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "city",
+      "targetTime": 1.9
+    },
+    {
+      "name": "house",
+      "targetTime": 4.85
+    },
+    {
+      "name": "zoom",
+      "targetTime": 7.8500000000000005
+    },
+    {
+      "name": "no-internet",
+      "targetTime": 11.3
+    },
+    {
+      "name": "title",
+      "targetTime": 15.100000000000001
+    }
+  ],
+  "seed": 4135497151
+}

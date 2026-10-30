@@ -1,0 +1,38 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "intro",
+      "targetTime": 1.2000000000000002
+    },
+    {
+      "name": "row-host",
+      "targetTime": 4.1
+    },
+    {
+      "name": "row-router",
+      "targetTime": 8.5
+    },
+    {
+      "name": "row-link",
+      "targetTime": 11.4
+    },
+    {
+      "name": "row-light",
+      "targetTime": 14.3
+    },
+    {
+      "name": "row-internet",
+      "targetTime": 17.200000000000003
+    },
+    {
+      "name": "row-packet",
+      "targetTime": 20.1
+    },
+    {
+      "name": "rows-done",
+      "targetTime": 21.1
+    }
+  ],
+  "seed": 583402370
+}

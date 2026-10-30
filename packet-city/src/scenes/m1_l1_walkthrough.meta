@@ -1,0 +1,26 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "ping-intro",
+      "targetTime": 2
+    },
+    {
+      "name": "type",
+      "targetTime": 4.484999999999999
+    },
+    {
+      "name": "hop-1",
+      "targetTime": 11.114999999999998
+    },
+    {
+      "name": "hops-2-3",
+      "targetTime": 19.794999999999998
+    },
+    {
+      "name": "read-result",
+      "targetTime": 25.974999999999998
+    }
+  ],
+  "seed": 2589651935
+}

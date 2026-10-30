@@ -1,0 +1,68 @@
+{
+  "lesson": "m1_l1",
+  "title": "First Hello",
+  "exam": "CompTIA Network+ N10-009",
+  "questions": [
+    {
+      "id": "m1_l1_q1",
+      "objective": "1.2",
+      "prompt": "Which of these is a host?",
+      "choices": ["A laptop", "An Ethernet cable", "A link light", "The internet"],
+      "answer": 0,
+      "explanation": "A host is any device that sends or receives data. A cable is a link, a link light is an indicator, and the internet is many networks joined together."
+    },
+    {
+      "id": "m1_l1_q2",
+      "objective": "1.2",
+      "prompt": "What is the main job of a router?",
+      "choices": [
+        "To connect different networks and pass traffic between them",
+        "To supply power to the devices plugged into it",
+        "To store the websites that people visit",
+        "To make an Ethernet cable faster"
+      ],
+      "answer": 0,
+      "explanation": "A router joins networks, such as a home network and the internet, and forwards traffic between them."
+    },
+    {
+      "id": "m1_l1_q3",
+      "objective": "5.2",
+      "prompt": "A laptop and a router are both powered on, but the link light on the router port the laptop is cabled to is dark. What should you check first?",
+      "choices": [
+        "Reseat the cable at both ends, then try another cable or port",
+        "Call the internet provider to report an outage",
+        "Reinstall the laptop's operating system",
+        "Clear the web browser's history"
+      ],
+      "answer": 0,
+      "explanation": "A dark link light points to a physical problem on that cable or its ports. An internet outage would not turn off the light between the laptop and the router."
+    },
+    {
+      "id": "m1_l1_q4",
+      "objective": "5.2",
+      "prompt": "The link light on a port is green. What does that tell you?",
+      "choices": [
+        "The physical connection between the two ends of that cable is up",
+        "The internet connection is working",
+        "The website you want is online",
+        "The Wi-Fi password is correct"
+      ],
+      "answer": 0,
+      "explanation": "A link light only reports the physical link on that one cable. Data can still fail further along, so a green light rules out the cable but nothing beyond it."
+    },
+    {
+      "id": "m1_l1_q5",
+      "objective": "5.5",
+      "prompt": "Maya runs ping -c 3 1.1.1.1 and sees \"3 packets transmitted, 3 received, 0% packet loss\". What does this show?",
+      "choices": [
+        "Her test messages reached 1.1.1.1 and replies came back",
+        "Her cable is plugged into the wrong port",
+        "Her router is switched off",
+        "Three of her websites are down"
+      ],
+      "answer": 0,
+      "explanation": "Ping sends test messages and waits for replies. Three sent and three received means the path works in both directions."
+    }
+  ],
+  "notes": "Every correct answer is listed first here; shuffle the choices when loading them into the quiz tool."
+}

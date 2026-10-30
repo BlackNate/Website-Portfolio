@@ -1,0 +1,22 @@
+{
+  "name": "packet-city",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "vite",
+    "serve": "vite",
+    "build": "tsc && vite build",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@motion-canvas/core": "^3.17.2",
+    "@motion-canvas/2d": "^3.17.2"
+  },
+  "devDependencies": {
+    "@motion-canvas/ffmpeg": "^3.17.2",
+    "@motion-canvas/ui": "^3.17.2",
+    "@motion-canvas/vite-plugin": "^3.17.2",
+    "typescript": "^5.2.2",
+    "vite": "^4.0.0"
+  }
+}

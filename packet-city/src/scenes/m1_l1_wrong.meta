@@ -1,0 +1,42 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "next-day",
+      "targetTime": 2
+    },
+    {
+      "name": "broken",
+      "targetTime": 4.55
+    },
+    {
+      "name": "ping-fail",
+      "targetTime": 8.534999999999998
+    },
+    {
+      "name": "guess",
+      "targetTime": 15.434999999999999
+    },
+    {
+      "name": "reveal",
+      "targetTime": 20.534999999999997
+    },
+    {
+      "name": "zoom-fault",
+      "targetTime": 26.184999999999995
+    },
+    {
+      "name": "fix",
+      "targetTime": 36.81000000000002
+    },
+    {
+      "name": "rule",
+      "targetTime": 41.71000000000002
+    },
+    {
+      "name": "but",
+      "targetTime": 45.71000000000002
+    }
+  ],
+  "seed": 3098715460
+}
