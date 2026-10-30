@@ -7,12 +7,13 @@ import walkthrough from './scenes/m1_l1_walkthrough?scene';
 import wrong from './scenes/m1_l1_wrong?scene';
 import recap from './scenes/m1_l1_recap?scene';
 
-// Once the narration is recorded, save it as audio/m1_l1.wav and
-// uncomment these two lines to play it under the animation.
-// import audio from '../audio/m1_l1.wav';
+// One track for the whole lesson, built from the six beat clips in audio/
+// by scripts/build-audio.py so each clip starts with its scene.
+import audio from '../audio/m1_l1.mp3';
 
 export default makeProject({
   name: 'M1 L1 · First Hello',
   scenes: [hook, concept, realterms, walkthrough, wrong, recap],
-  // audio,
+  audio,
+  variables: {narrated: true},
 });

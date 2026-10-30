@@ -1,5 +1,5 @@
 import {Rect, makeScene2D} from '@motion-canvas/2d';
-import {all, createRef, easeInOutCubic} from '@motion-canvas/core';
+import {all, createRef, easeInOutCubic, waitUntil} from '@motion-canvas/core';
 import {FaultMarker} from '../components/FaultMarker';
 import {GuessCard} from '../components/GuessCard';
 import {Packet} from '../components/Packet';
@@ -52,7 +52,11 @@ export default makeScene2D(function* (view) {
       "The cable isn't connected properly at one end",
       'The laptop needs a software update',
     ],
+    0,
   );
+  // The countdown starts when the narrator finishes asking.
+  yield* waitUntil('guess-said');
+  yield* guess().countdown();
   yield* cue('guess', 0.5);
 
   // [cue: reveal]

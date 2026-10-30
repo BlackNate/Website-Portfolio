@@ -63,7 +63,10 @@ export class GuessCard extends Node {
     );
   }
 
-  /** Shows the question and options, then runs the countdown. */
+  /**
+   * Shows the question and options, then runs the countdown.
+   * Pass `seconds = 0` to show the card only, and call countdown() later.
+   */
   public *ask(question: string, choices: string[], seconds = T.think) {
     this.question().text(question);
     this.options().removeChildren();
@@ -80,7 +83,13 @@ export class GuessCard extends Node {
     this.count().text(String(seconds));
     yield* this.card().scale(1, T.pop, easeOutBack);
     yield* sequence(0.15, ...this.options().children().map(row => row.opacity(1, T.pop)));
-    yield* all(this.ring().endAngle(-90, seconds, linear), this.countDown(seconds));
+    if (seconds > 0) yield* this.countdown(seconds);
+  }
+
+  /** Runs the ring and the number down to zero. */
+  public *countdown(seconds = T.think) {
+    this.count().text(String(seconds));
+    yield* all(this.ring().endAngle(-90, seconds, linear), this.countNumbers(seconds));
   }
 
   /** Marks the right answer, dims the others, and shows a one-line reason. */
@@ -102,7 +111,7 @@ export class GuessCard extends Node {
     yield* this.card().scale(0, duration);
   }
 
-  private *countDown(seconds: number) {
+  private *countNumbers(seconds: number) {
     for (let left = seconds; left > 0; left--) {
       this.count().text(String(left));
       yield* waitFor(1);

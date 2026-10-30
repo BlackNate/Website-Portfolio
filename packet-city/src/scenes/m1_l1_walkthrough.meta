@@ -3,23 +3,23 @@
   "timeEvents": [
     {
       "name": "ping-intro",
-      "targetTime": 2
+      "targetTime": 9.3
     },
     {
       "name": "type",
-      "targetTime": 4.484999999999999
+      "targetTime": 19.41
     },
     {
       "name": "hop-1",
-      "targetTime": 11.114999999999998
+      "targetTime": 30.29
     },
     {
       "name": "hops-2-3",
-      "targetTime": 19.794999999999998
+      "targetTime": 34.38
     },
     {
       "name": "read-result",
-      "targetTime": 25.974999999999998
+      "targetTime": 47.374
     }
   ],
   "seed": 2589651935

@@ -1,4 +1,4 @@
-import {waitFor, waitUntil} from '@motion-canvas/core';
+import {useLogger, useScene, useTime, waitFor, waitUntil} from '@motion-canvas/core';
 
 // Standard durations in seconds, so every lesson moves at the same pace.
 export const T = {
@@ -13,12 +13,26 @@ export const T = {
 };
 
 /**
- * A narration cue. `waitFor(pause)` keeps the preview watchable before any
- * voice-over exists; `waitUntil(name)` adds a time event you can drag in the
- * editor timeline to line the animation up with the recorded narration.
- * Cue names match the [cue: ...] markers in notes/m1_l1.md.
+ * A narration cue. Call it after the animation for a line of narration;
+ * `waitUntil(name)` adds a time event you can drag in the editor timeline
+ * to the moment the next line starts. Cue names match the [cue: ...]
+ * markers in notes/<lesson>.md.
+ *
+ * Before narration exists, `pause` keeps the preview watchable. Once a
+ * lesson's project sets `variables: {narrated: true}`, the pause is skipped
+ * so the time events alone follow the voice-over, and a cue the animation
+ * reaches after its event's time is logged as a warning.
  */
 export function* cue(name: string, pause = T.beat) {
-  yield* waitFor(pause);
+  const narrated = useScene().variables.get('narrated', false)();
+  if (!narrated) {
+    yield* waitFor(pause);
+    yield* waitUntil(name);
+    return;
+  }
+  const reached = useTime();
   yield* waitUntil(name);
+  if (useTime() === reached) {
+    useLogger().warn(`cue "${name}" reached at ${reached.toFixed(2)}s, at or after its event time`);
+  }
 }

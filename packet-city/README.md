@@ -14,6 +14,13 @@ In the editor, use **Video Settings → Render** to export. Choose the "Video (F
 
 `npm run check` type-checks everything.
 
+## Narration
+
+1. Generate one ElevenLabs clip per beat from `notes/<lesson>_elevenlabs.txt` and save them as `audio/<lesson>_<beat>.mp3`.
+2. Run `python3 scripts/build-audio.py <lesson>` (needs ffmpeg and `pip install pocketsphinx`). It aligns each clip to its text, sets every cue in the scene `.meta` files to the moment its line is spoken, adds back any long pause the voice skipped, and writes the combined track `audio/<lesson>.mp3`.
+3. In the lesson's project file, import that track as `audio` and set `variables: {narrated: true}`. This turns off the preview pauses so the cues alone follow the voice.
+4. Open the editor. If an animation runs longer than its line, the editor's console warns that the cue was reached late; shorten the animation or drag the cue.
+
 ## Layout
 
 ```text
@@ -28,7 +35,8 @@ src/
   scenes/            m1_l1_hook, _concept, _realterms, _walkthrough, _wrong, _recap
 notes/m1_l1.md       narration script with [cue: …] markers and accuracy notes
 quizzes/m1_l1.json   5 tagged quiz questions
-audio/               narration tracks (m1_l1.wav)
+audio/               narration clips per beat, and the combined m1_l1.mp3
+scripts/build-audio.py  lines narration up with the scenes
 labs/                module labs
 ```
 
@@ -39,4 +47,4 @@ The `.meta` files next to the project and scenes are written by the editor. They
 1. Write `notes/m<M>_l<L>.md` in the seven beats, with a `[cue: name]` before each line of narration.
 2. Create the scenes in `src/scenes/` and call `yield* cue('name')` at the matching points.
 3. Add `src/m<M>_l<L>.ts` and list it in `vite.config.ts` under `project`.
-4. Record narration, then drag each cue in the editor timeline to line up with the voice-over.
+4. Record narration and follow the Narration steps above.

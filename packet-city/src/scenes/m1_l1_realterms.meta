@@ -3,35 +3,35 @@
   "timeEvents": [
     {
       "name": "intro",
-      "targetTime": 1.2000000000000002
+      "targetTime": 3.41
     },
     {
       "name": "row-host",
-      "targetTime": 4.1
+      "targetTime": 8
     },
     {
       "name": "row-router",
-      "targetTime": 8.5
+      "targetTime": 24.98
     },
     {
       "name": "row-link",
-      "targetTime": 11.4
+      "targetTime": 29.29
     },
     {
       "name": "row-light",
-      "targetTime": 14.3
+      "targetTime": 36.03
     },
     {
       "name": "row-internet",
-      "targetTime": 17.200000000000003
+      "targetTime": 40.7
     },
     {
       "name": "row-packet",
-      "targetTime": 20.1
+      "targetTime": 46.889
     },
     {
       "name": "rows-done",
-      "targetTime": 21.1
+      "targetTime": 46.889
     }
   ],
   "seed": 583402370

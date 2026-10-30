@@ -3,23 +3,23 @@
   "timeEvents": [
     {
       "name": "city",
-      "targetTime": 1.9
+      "targetTime": 4.64
     },
     {
       "name": "house",
-      "targetTime": 4.85
+      "targetTime": 8.04
     },
     {
       "name": "zoom",
-      "targetTime": 7.8500000000000005
+      "targetTime": 11.36
     },
     {
       "name": "no-internet",
-      "targetTime": 11.3
+      "targetTime": 13.82
     },
     {
       "name": "title",
-      "targetTime": 15.100000000000001
+      "targetTime": 23.353
     }
   ],
   "seed": 4135497151

@@ -3,11 +3,11 @@
   "timeEvents": [
     {
       "name": "recap",
-      "targetTime": 7.95
+      "targetTime": 16.25
     },
     {
       "name": "next",
-      "targetTime": 11.35
+      "targetTime": 23.181
     }
   ],
   "seed": 769221940

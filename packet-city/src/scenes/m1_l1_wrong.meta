@@ -3,39 +3,43 @@
   "timeEvents": [
     {
       "name": "next-day",
-      "targetTime": 2
+      "targetTime": 5.39
     },
     {
       "name": "broken",
-      "targetTime": 4.55
+      "targetTime": 7.3
     },
     {
       "name": "ping-fail",
-      "targetTime": 8.534999999999998
+      "targetTime": 15.42
+    },
+    {
+      "name": "guess-said",
+      "targetTime": 27.02
     },
     {
       "name": "guess",
-      "targetTime": 15.434999999999999
+      "targetTime": 32.2
     },
     {
       "name": "reveal",
-      "targetTime": 20.534999999999997
+      "targetTime": 45.88
     },
     {
       "name": "zoom-fault",
-      "targetTime": 26.184999999999995
+      "targetTime": 52.13
     },
     {
       "name": "fix",
-      "targetTime": 36.81000000000002
+      "targetTime": 57.55
     },
     {
       "name": "rule",
-      "targetTime": 41.71000000000002
+      "targetTime": 68.6
     },
     {
       "name": "but",
-      "targetTime": 45.71000000000002
+      "targetTime": 78.848
     }
   ],
   "seed": 3098715460

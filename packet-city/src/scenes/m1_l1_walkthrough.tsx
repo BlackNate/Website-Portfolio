@@ -36,7 +36,8 @@ export default makeScene2D(function* (view) {
   yield* cue('type', 1);
 
   for (const [i, reply] of replies.entries()) {
-    const hop = i === 0 ? 1 : T.hop * 0.7;
+    // The first ping is slow enough to narrate; the next two are quick.
+    const hop = i === 0 ? 1 : 0.25;
     yield* packet().relabel('ping', 0);
     yield* packet().travel(out, hop);
     yield* internet.blink(1);
@@ -44,7 +45,7 @@ export default makeScene2D(function* (view) {
     yield* packet().travel(back(out), hop);
     yield* packet().disappear(0.2);
     yield* term().print(reply, colors.text, 0);
-    yield* term().flashLast();
+    if (i === 0) yield* term().flashLast();
     // [cue: hop-1] after the first ping, [cue: hops-2-3] after the last.
     if (i === 0) yield* cue('hop-1', 0.5);
   }

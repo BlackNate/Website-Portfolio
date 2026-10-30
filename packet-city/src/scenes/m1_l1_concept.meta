@@ -3,63 +3,63 @@
   "timeEvents": [
     {
       "name": "laptop",
-      "targetTime": 1.55
+      "targetTime": 6.87
     },
     {
       "name": "host-chip",
-      "targetTime": 4.85
+      "targetTime": 8.9
     },
     {
       "name": "phone",
-      "targetTime": 8.98
+      "targetTime": 17.86
     },
     {
       "name": "router",
-      "targetTime": 10.930000000000001
+      "targetTime": 30.31
     },
     {
       "name": "router-chip",
-      "targetTime": 14.230000000000002
+      "targetTime": 34.43
     },
     {
       "name": "house",
-      "targetTime": 15.830000000000004
+      "targetTime": 38.77
     },
     {
       "name": "internet",
-      "targetTime": 20.180000000000007
+      "targetTime": 45.2
     },
     {
       "name": "cable",
-      "targetTime": 22.130000000000006
+      "targetTime": 54.33
     },
     {
       "name": "link-chip",
-      "targetTime": 24.980000000000008
+      "targetTime": 57.28
     },
     {
       "name": "light",
-      "targetTime": 27.159999999999997
+      "targetTime": 68
     },
     {
       "name": "light-chip",
-      "targetTime": 30.459999999999997
+      "targetTime": 72.64
     },
     {
       "name": "first-packet",
-      "targetTime": 32.50999999999999
+      "targetTime": 82.28
     },
     {
       "name": "out",
-      "targetTime": 34.449999999999974
+      "targetTime": 84.95
     },
     {
       "name": "reply",
-      "targetTime": 37.949999999999974
+      "targetTime": 92.83
     },
     {
       "name": "key-idea",
-      "targetTime": 41.699999999999974
+      "targetTime": 103.131
     }
   ],
   "seed": 3139408935
