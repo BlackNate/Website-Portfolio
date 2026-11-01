@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maya's Financial Decisions — Ep. 1</title>
+<style>
+  @font-face { font-family: "DM Serif Display"; src: url(fonts/dmserif.woff2) format("woff2"); }
+  @font-face { font-family: Poppins; font-weight: 600; src: url(fonts/poppins600.woff2) format("woff2"); }
+  @font-face { font-family: Poppins; font-weight: 700 900; src: url(fonts/poppins800.woff2) format("woff2"); }
+  @font-face { font-family: Caveat; font-weight: 700; src: url(fonts/caveat.woff2) format("woff2"); }
+  html, body { margin: 0; background: #111; color: #eee; font-family: Inter, sans-serif; }
+  canvas { display: block; width: 100%; max-width: 1920px; margin: 0 auto; aspect-ratio: 16/9; background: #F4F1E8; }
+  #ui { max-width: 1920px; margin: 8px auto; display: flex; gap: 10px; align-items: center; padding: 0 12px; flex-wrap: wrap; }
+  #ui input[type=range] { flex: 1; min-width: 200px; }
+  button, select { background: #222; color: #eee; border: 1px solid #444; border-radius: 6px; padding: 6px 10px; }
+  body.render #ui { display: none; } body.render canvas { width: 1920px; max-width: none; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<div id="ui">
+  <button id="play">▶ Play</button>
+  <input id="scrub" type="range" min="0" step="0.01" value="0">
+  <span id="time">0:00</span>
+  <select id="jump"></select>
+  <label><input id="cap" type="checkbox" checked> captions</label>
+</div>
+<script src="src/script.js"></script>
+<script src="src/engine.js"></script>
+<script src="src/main.js"></script>
+<script src="src/scenes1.js"></script>
+<script src="src/scenes2.js"></script>
+<script src="src/scenes3.js"></script>
+<script>
+const cv = document.getElementById('c'); const ctx = cv.getContext('2d');
+const RENDER = location.search.includes('render');
+if (RENDER) document.body.classList.add('render');
+if (location.search.includes('nocaps')) SHOW_CAPTIONS = false;
+window.ready = (async () => {
+  await Promise.all(['96px "DM Serif Display"', '800 40px Poppins', '600 40px Poppins', '700 40px Caveat', '600 30px Inter'].map(f => document.fonts.load(f)));
+  makePaper(); makeGrain(); return true;
+})();
+window.renderAt = t => frame(ctx, t);
+window.TOTAL = TOTAL; window.TL = TL;
+window.getSfx = () => [...SFX.events.values()];
+window.getTimeline = () => ({ total: TOTAL, beats: TL.map(b => ({ scene: b.scene, sec: b.sec.id, mood: b.sec.mood || null, start: b.start, end: b.end })), lines: LINES.map(l => ({ text: l.text, start: l.start, end: l.end, sec: l.sec.id })) });
+if (!RENDER) window.ready.then(() => {
+  const sc = document.getElementById('scrub'), tm = document.getElementById('time'), jp = document.getElementById('jump');
+  sc.max = TOTAL; let playing = false, t = +(new URLSearchParams(location.search).get('t') || 0), last = 0;
+  TL.forEach(b => { const o = document.createElement('option'); o.value = b.start; o.textContent = `${fmt(b.start)}  ${b.sec.part || 'Open'} · ${b.scene}`; jp.appendChild(o); });
+  function fmt(s) { return Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0'); }
+  const draw = () => { frame(ctx, t); sc.value = t; tm.textContent = fmt(t) + ' / ' + fmt(TOTAL); };
+  document.getElementById('play').onclick = e => { playing = !playing; e.target.textContent = playing ? '❚❚ Pause' : '▶ Play'; last = performance.now(); };
+  sc.oninput = () => { t = +sc.value; draw(); }; jp.onchange = () => { t = +jp.value - .3; draw(); };
+  document.getElementById('cap').onchange = e => { SHOW_CAPTIONS = e.target.checked; draw(); };
+  const loop = now => { if (playing) { t = Math.min(TOTAL, t + (now - last) / 1000); last = now; draw(); } requestAnimationFrame(loop); };
+  draw(); requestAnimationFrame(loop);
+});
+</script>
+</body>
+</html>
