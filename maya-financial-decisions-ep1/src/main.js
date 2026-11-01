@@ -19,7 +19,7 @@ const TL = []; let TOTAL = 0; const LINES = [];
     if (sec.title) { TL.push({ scene: 'titleCard', sec, si, start: t, end: t + TITLE_DUR, lines: [], L: [] }); t += TITLE_DUR; }
     sec.beats.forEach((b, bi) => {
       const beat = { scene: b.scene, sec, si, start: t, lines: [], L: [] };
-      b.lines.forEach(s => { const d = ov ? ov[li] : lineDur(s); const ln = { text: s, start: t, end: t + d, sec }; beat.lines.push(ln); LINES.push(ln); li++; t += d + LGAP; });
+      b.lines.forEach(s => { const d = ov && ov[li] != null ? ov[li] : lineDur(s); const ln = { text: s, start: t, end: t + d, sec }; beat.lines.push(ln); LINES.push(ln); li++; t += d + LGAP; });
       t += b.hold || 0; beat.end = t; TL.push(beat);
     });
     TL[TL.length - 1].end += SEC_GAP; t += SEC_GAP;

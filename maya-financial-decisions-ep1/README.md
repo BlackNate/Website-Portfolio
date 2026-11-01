@@ -20,6 +20,7 @@ Everything is procedural, with no stock assets, so every scene, number, label an
 | `tools/events.mjs` | Fast pass that exports `out/timeline.json` and SFX cue points |
 | `tools/audio.py` | Procedural music bed (darker during the Risks chapter) and synced SFX → `out/*.wav` |
 | `tools/render.mjs` | Parallel headless-Chromium renderer → `out/video_nosound.mp4` |
+| `tools/vo_align.py` | Splits chapter VO files into line clips and writes `src/timings.js` |
 | `tools/srt.py` | Writes `out/captions.srt` (YouTube closed captions or a VO cue sheet) |
 
 ## Build
@@ -35,13 +36,18 @@ ffmpeg -i out/video_nosound.mp4 -i out/mix.wav -c:v copy -c:a aac -b:a 192k -sho
 
 Preview a single moment: `index.html?t=245` · Stills for review: `node tools/stills.mjs <dir> beats`.
 
-## Adding a voiceover
+## Voiceover
 
-Timing currently comes from a narration pace of 3.0 words/sec (~180 wpm) plus short pauses.
-To sync with a real recording, measure each line's duration (one per caption, 249 lines, in script order)
-and define `TIMINGS_OVERRIDE = [ ... ]` (seconds per line) in a script loaded before `main.js`.
-Every animation is keyed to line start times, so all scenes re-time themselves. Then re-run the build
-and mix the VO over `out/music.wav` + `out/sfx.wav`.
+Narration is ElevenLabs (voice: *Jennica*, warm documentary narrator, model `eleven_v4`), generated one
+chapter at a time into `out/vo/<chunk>.mp3` (chunk list: `out/vo/chunks.json`). Then:
+
+```bash
+python3 tools/vo_align.py     # splits each chapter into per-line clips at the pauses, writes src/timings.js
+node tools/events.mjs out && python3 tools/audio.py out   # places each clip at its caption, ducks the music
+```
+
+`src/timings.js` holds the measured length of every line. Every animation is keyed to line start times,
+so all scenes re-time themselves to the read. A line with no recording (`null`) falls back to word-count timing.
 
 All companies, countries and currencies (Northstar Technologies, the Republic of Arbordale, "units of currency")
 are fictional, and every number is illustrative, as in the script.

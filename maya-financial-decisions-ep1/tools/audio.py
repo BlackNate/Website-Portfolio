@@ -139,8 +139,26 @@ def save(name, x):
     x = np.clip(x, -1, 1); y = (x * 32767).astype('<i2')
     with wave.open(os.path.join(OUT, name), 'wb') as w: w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(y.tobytes())
 
-mix = music + S
-peak = np.max(np.abs(mix)); gain = .89 / peak if peak > 0 else 1
-print('peak', round(float(peak), 3), 'gain', round(float(gain), 2), 'rms(dB)', round(float(20 * np.log10(np.sqrt(np.mean((mix * gain) ** 2)))), 1))
-save('music.wav', music * gain); save('sfx.wav', S * gain); save('mix.wav', mix * gain)
+# ── voiceover (out/vo/lines/NNN.wav, placed at each caption's start) + ducking ──
+VOD = os.path.join(OUT, 'vo', 'lines'); V = np.zeros(N, np.float32); have_vo = False
+for i, l in enumerate(tl['lines']):
+    f = os.path.join(VOD, f'{i:03d}.wav')
+    if not os.path.exists(f): continue
+    with wave.open(f) as w: x = np.frombuffer(w.readframes(w.getnframes()), '<i2').astype(np.float32) / 32768
+    j = int(l['start'] * SR); k = min(len(x), N - j); V[j:j + k] += x[:k]; have_vo = True
+if have_vo:
+    V *= .5 / (np.percentile(np.abs(V[V != 0]), 99.5) + 1e-9)          # normalise narration
+    hop = 441; env = np.abs(V[:len(V) // hop * hop]).reshape(-1, hop).max(1) > .02
+    k = 60; env = np.convolve(env.astype(float), np.ones(k) / k, 'same') > 0        # hold through short gaps
+    duck = np.repeat(np.convolve(env.astype(float), np.ones(30) / 30, 'same'), hop)  # ~0.3s ramps
+    duck = np.pad(duck, (0, N - len(duck)), 'edge')[:N]
+    music *= (1 - .55 * duck)[:, None]; S *= (1 - .3 * duck)[:, None]
+    save_vo = True
+mix = music + S + V[:, None]
+rms0 = np.sqrt(np.mean(mix ** 2)); gain = 10 ** ((-17 - 20 * np.log10(rms0)) / 20)   # target ~-17 dBFS RMS
+lim = lambda x: np.tanh(x / .95) * .95                                               # soft limiter
+peak = np.max(np.abs(mix))
+print('peak', round(float(peak), 3), 'gain', round(float(gain), 2), 'rms(dB)', round(float(20 * np.log10(np.sqrt(np.mean(lim(mix * gain) ** 2)))), 1))
+save('music.wav', lim(music * gain)); save('sfx.wav', lim(S * gain)); save('mix.wav', lim(mix * gain))
+if have_vo: save('voice.wav', lim(np.stack([V, V], 1) * gain))
 print('wrote', OUT)
