@@ -12,16 +12,6 @@ export const RemotionRoot: React.FC = () => (
       fps={FPS}
       width={WIDTH}
       height={HEIGHT}
-      defaultProps={{captions: true}}
-    />
-    <Composition
-      id="TrackscribeNoCaptions"
-      component={TrackscribeVideo}
-      durationInFrames={TOTAL_FRAMES}
-      fps={FPS}
-      width={WIDTH}
-      height={HEIGHT}
-      defaultProps={{captions: false}}
     />
   </>
 );

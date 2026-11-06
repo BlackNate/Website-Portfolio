@@ -1,61 +1,9 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, random, spring, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, interpolate, random, staticFile, useCurrentFrame} from 'remotion';
 import {PAGE_CUTS} from './Camera';
-import {FPS, HEIGHT, INTRO, TIMED_SHOTS, TOTAL_SECONDS, WIDTH, lineById} from './timeline';
+import {FPS, HEIGHT, TIMED_SHOTS, TOTAL_SECONDS, WIDTH, lineById} from './timeline';
 
-const DISPLAY = "'Bangers', 'Impact', sans-serif";
-const LETTERING = "'Comic Neue', 'Comic Sans MS', sans-serif";
 const PURPLE = '#a855f7';
-
-export const LogoMark: React.FC<{size: number}> = ({size}) => (
-  <svg width={size} height={size} viewBox="0 0 100 100">
-    <defs>
-      <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#c084fc" />
-        <stop offset="1" stopColor="#7c3aed" />
-      </linearGradient>
-    </defs>
-    <rect x="8" y="16" width="84" height="76" rx="16" fill="url(#lg)" stroke="#fff" strokeWidth="4" />
-    <rect x="8" y="16" width="84" height="20" rx="10" fill="#6d28d9" />
-    <rect x="26" y="6" width="9" height="22" rx="4" fill="#fff" />
-    <rect x="65" y="6" width="9" height="22" rx="4" fill="#fff" />
-    {[0, 1, 2, 3].map((c) =>
-      [0, 1, 2].map((r) => (
-        <rect key={`${c}-${r}`} x={20 + c * 16} y={44 + r * 15} width={11} height={10} rx={2} fill="#fff" />
-      )),
-    )}
-  </svg>
-);
-
-export const Wordmark: React.FC<{scale?: number}> = ({scale = 1}) => (
-  <div style={{display: 'flex', alignItems: 'center', gap: 22 * scale}}>
-    <LogoMark size={130 * scale} />
-    <div style={{position: 'relative'}}>
-      <div
-        style={{
-          fontFamily: DISPLAY,
-          fontSize: 140 * scale,
-          color: '#fff',
-          letterSpacing: 4 * scale,
-          lineHeight: 1,
-          textShadow: `${6 * scale}px ${6 * scale}px 0 #000, 0 0 ${40 * scale}px rgba(168,85,247,0.8)`,
-          transform: 'skewX(-6deg)',
-        }}
-      >
-        TRACKSCRIBE
-      </div>
-      <div
-        style={{
-          height: 12 * scale,
-          marginTop: 6 * scale,
-          background: `linear-gradient(90deg, ${PURPLE}, #7c3aed 70%, transparent)`,
-          borderRadius: 6,
-          transform: 'skewX(-20deg)',
-        }}
-      />
-    </div>
-  </div>
-);
 
 /** Film grain + vignette + gentle letterbox gradient. */
 export const Grade: React.FC = () => {
@@ -207,124 +155,13 @@ export const SunGlow: React.FC = () => {
   );
 };
 
-/** Title card over the first page. */
-export const Intro: React.FC = () => {
+/** Fade up from black at the start and down to black at the end. */
+export const FadeInOut: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
-  if (t > INTRO + 0.2) return null;
-  const out = interpolate(t, [INTRO - 0.45, INTRO], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const logo = spring({frame: frame - 8, fps: FPS, config: {damping: 9, stiffness: 160}});
-  const ep = spring({frame: frame - 26, fps: FPS, config: {damping: 12}});
-  const sub = interpolate(frame, [36, 52], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const dark = interpolate(t, [0, 0.4], [1, 0.72], {extrapolateRight: 'clamp'});
-  return (
-    <AbsoluteFill style={{opacity: out}}>
-      <AbsoluteFill style={{background: `rgba(10,4,22,${dark})`}} />
-      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 40}}>
-        <div style={{transform: `scale(${0.4 + 0.6 * logo}) rotate(${(1 - logo) * -8}deg)`, opacity: Math.min(1, logo * 1.5)}}>
-          <Wordmark scale={0.9} />
-        </div>
-        <div
-          style={{
-            transform: `translateX(${(1 - ep) * 600}px) rotate(-3deg)`,
-            background: '#ffe14d',
-            border: '6px solid #111',
-            boxShadow: '8px 8px 0 #000',
-            padding: '10px 36px',
-            fontFamily: DISPLAY,
-            fontSize: 72,
-            letterSpacing: 4,
-            color: '#111',
-          }}
-        >
-          EPISODE 001
-        </div>
-        <div
-          style={{
-            opacity: sub,
-            transform: `translateY(${(1 - sub) * 30}px)`,
-            fontFamily: LETTERING,
-            fontWeight: 700,
-            fontSize: 50,
-            color: '#fff',
-            textAlign: 'center',
-            letterSpacing: 2,
-            textShadow: '4px 4px 0 #000',
-            padding: '0 80px',
-          }}
-        >
-          THE MYSTERY OF THE
-          <br />
-          <span style={{color: '#ff4d4d', fontSize: 72, fontFamily: DISPLAY, letterSpacing: 4}}>MISSING MONEY</span>
-        </div>
-      </AbsoluteFill>
-    </AbsoluteFill>
+  const o = Math.max(
+    interpolate(t, [0, 0.6], [1, 0], {extrapolateRight: 'clamp'}),
+    interpolate(t, [TOTAL_SECONDS - 0.8, TOTAL_SECONDS], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
   );
-};
-
-/** Closing brand card. */
-export const EndCard: React.FC = () => {
-  const frame = useCurrentFrame();
-  const t = frame / FPS;
-  const a = TOTAL_SECONDS - 2.6;
-  if (t < a) return null;
-  const f = frame - Math.round(a * FPS);
-  const bg = interpolate(t, [a, a + 0.5], [0, 0.82], {extrapolateRight: 'clamp'});
-  const logo = spring({frame: f, fps: FPS, config: {damping: 10, stiffness: 150}});
-  const tag = spring({frame: f - 10, fps: FPS, config: {damping: 14}});
-  const badge = spring({frame: f - 18, fps: FPS, config: {damping: 12}});
-  const fade = interpolate(t, [TOTAL_SECONDS - 0.4, TOTAL_SECONDS], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const glow = 0.6 + 0.4 * Math.sin(t * 5);
-  return (
-    <AbsoluteFill>
-      <AbsoluteFill style={{background: `rgba(12,4,26,${bg})`}} />
-      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 60}}>
-        <div style={{transform: `scale(${logo})`}}>
-          <Wordmark scale={0.9} />
-        </div>
-        <div
-          style={{
-            opacity: tag,
-            transform: `translateY(${(1 - tag) * 40}px)`,
-            fontFamily: DISPLAY,
-            fontSize: 70,
-            color: '#fff',
-            textAlign: 'center',
-            letterSpacing: 3,
-            lineHeight: 1.15,
-            textShadow: '5px 5px 0 #000',
-          }}
-        >
-          TRACK IT. DON&apos;T LOSE IT.
-          <br />
-          <span style={{color: '#ffe14d'}}>TAKE CONTROL OF YOUR MONEY.</span>
-        </div>
-        <div
-          style={{
-            transform: `scale(${badge})`,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 26,
-            background: '#000',
-            border: '4px solid #ffd54a',
-            borderRadius: 26,
-            padding: '20px 44px',
-            boxShadow: `0 0 ${50 * glow}px rgba(255,213,74,0.7)`,
-          }}
-        >
-          <svg width={90} height={100} viewBox="0 0 90 100">
-            <path d="M5 5 L55 50 L5 95 Z" fill="#00d7fe" />
-            <path d="M5 5 L70 41 L55 50 Z" fill="#00f076" />
-            <path d="M5 95 L70 59 L55 50 Z" fill="#ff3a44" />
-            <path d="M70 41 L88 50 L70 59 L55 50 Z" fill="#ffd400" />
-          </svg>
-          <div style={{color: '#fff', fontFamily: 'Arial, sans-serif'}}>
-            <div style={{fontSize: 30, letterSpacing: 2}}>GET IT ON</div>
-            <div style={{fontSize: 64, fontWeight: 700, lineHeight: 1}}>Google Play</div>
-          </div>
-        </div>
-      </AbsoluteFill>
-      <AbsoluteFill style={{background: '#000', opacity: fade}} />
-    </AbsoluteFill>
-  );
+  return <AbsoluteFill style={{background: '#000', opacity: o}} />;
 };

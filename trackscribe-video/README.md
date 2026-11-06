@@ -6,10 +6,10 @@ from the seven Trackscribe comic pages, with a three-character ElevenLabs voice 
 ## What's in the video
 - **Camera work:** a virtual camera glides between panels on each page, with eased moves, a slow push-in on holds,
   a punch-in plus white flash on page cuts, and shake with speed lines on the shock beats ("DGT Media Services?!", "I've checked everything!").
-- **Comic captions:** yellow caption boxes for the narrator, white speech bubbles for the man, and a glowing purple bubble for **Nekuru**,
-  with words revealed in time with the voice and key words in red.
+- **No added text:** the comic pages already carry their own lettering, so shots are framed to keep each character
+  and their speech bubbles in view instead of overlaying captions.
 - **Atmosphere:** film grain, vignette, rain and lightning in the storm panel, purple sparks around the portal and app, and a sunrise glow at the finale.
-- **Intro title card** and a **Google Play end card**.
+- Fades up on the full first page and ends by pulling back to the full final page (with its Google Play badge).
 - **Sound:** a tension drone bed that crossfades into a hopeful major pad at the summit, plus whooshes, a notification ping,
   hits, thunder, a riser into the gateway reveal, and brand booms (all synthesised by `scripts/make_sfx.py`).
 
@@ -33,11 +33,10 @@ npm run render                                   # -> out/trackscribe-episode-00
 
 Other commands:
 - `npm run studio` opens the Remotion Studio to tweak shots live.
-- Render the `TrackscribeNoCaptions` composition for a version without burned-in captions.
 - `npm run sfx` regenerates the music beds and SFX.
 
 ## Editing
 - `src/timeline.ts` holds every line: speaker, caption text, duration, and the camera shots
-  (`at` = fraction of the line, `x/y` = point on the 941×1672 comic page, `zoom`).
-- `src/Camera.tsx` handles the panel camera, `src/Captions.tsx` the comic lettering, `src/Overlays.tsx` the effects, title and end card,
+  (the caption text is only for reference; `at` = fraction of the line, `x/y` = point on the 941×1672 comic page, `zoom`).
+- `src/Camera.tsx` handles the panel camera, `src/Overlays.tsx` the effects and fades,
   and `src/Sound.tsx` the music, voice and SFX mix.

@@ -66,7 +66,6 @@ export const Sound: React.FC = () => {
 
       {/* ---------- sound design ---------- */}
       <Sfx at={0.25} name="boom" volume={0.8} />
-      <Sfx at={0.85} name="hit" volume={0.5} />
       <Sfx at={INTRO - 0.45} name="whoosh" volume={0.5} />
       {PAGE_CUTS.map((c) => (
         <Sfx key={c} at={c - 0.25} name="whoosh" volume={0.45} />
