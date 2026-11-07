@@ -1,0 +1,26 @@
+{
+  "name": "trackscribe-ad-30s",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trackscribe 30s ad - Never miss a subscription (Remotion + Lottie)",
+  "scripts": {
+    "studio": "remotion studio",
+    "lottie": "python3 scripts/make_lottie.py",
+    "sfx": "python3 scripts/make_sfx.py",
+    "fetch-audio": "node scripts/fetch-audio.mjs",
+    "render": "remotion render TrackscribeAd out/trackscribe-ad-30s.mp4"
+  },
+  "dependencies": {
+    "@fontsource/plus-jakarta-sans": "5.1.1",
+    "@remotion/cli": "4.0.541",
+    "@remotion/lottie": "4.0.541",
+    "lottie-web": "5.12.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.541"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}
